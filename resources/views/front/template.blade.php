@@ -8,7 +8,7 @@
         <title>{{ trans('front/site.title') }}</title>
         <meta name="description" content="">    
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/logo.png') !!}" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
