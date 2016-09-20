@@ -3633,7 +3633,6 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
   border: 1px solid transparent; }
   .navbar:before, .navbar:after {
     content: " ";
@@ -3909,9 +3908,6 @@ tbody.collapse.in {
     .navbar-right ~ .navbar-right {
       margin-right: 0; } }
 
-.navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7; }
   .navbar-default .navbar-brand {
     color: #777; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -5773,8 +5769,6 @@ button.close {
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
-  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  background: url("../img/bg.jpg") no-repeat center center fixed;
   background-size: cover;
   -o-background-size: cover; }
 
@@ -5895,11 +5889,7 @@ footer p {
   .navbar {
     min-height: 0; }
   .navbar-default {
-    border: none;
-    background: #fff;
-    background: rgba(255, 255, 255, 0.9); }
-  .nav > li > a {
-    padding: 35px; }
+    border: none; }
   .navbar-nav > li > a {
     line-height: normal; }
   .navbar-nav {
