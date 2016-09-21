@@ -19,18 +19,16 @@
     <div class="container">
         <header>
             <!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->
-            <div class="row">
-                <div class="col-md-4 col-md-offset-3">
-                    <form action="" class="search-form">
-                        <div class="form-group has-feedback">
-                                <label for="search" class="sr-only">Search</label>
-                                <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                        </div>
-                    </form>
-                </div>
+            <div class="pull-right">
+                <form action="" class="search-form">
+                    <div class="form-group has-feedback">
+                            <label for="search" class="sr-only">Search</label>
+                            <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                </form>
             </div>
-            <div id="logo">
+             <div id="logo">
                 <a href="/">
                     <img src="{!! asset('img/logo.png') !!}"alt="Logo">
                 </a>
@@ -97,7 +95,7 @@
                 </nav>
                 <div id="header-right-bottom" class="pull-right">
                     <span><i class="fa fa-phone"></i> 0123.456.789</span>
-                    <span><i class="fa fa-commenting-o"></i>&nbsp;CHÁT ONLINE</span> 
+                    <span><i class="fa fa-commenting-o"></i>&nbsp;CHAT ONLINE</span> 
                 </div>
             </div>
             @yield('header')    

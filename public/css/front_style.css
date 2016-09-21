@@ -75,7 +75,7 @@ body {
         .search-form .form-group:hover,
         .search-form .form-group.hover {
         width: 100%;
-        border-radius: 4px 25px 25px 4px;
+        border-radius: 25px 25px 25px 25px;
         }
         .search-form .form-group span.form-control-feedback {
         position: absolute;
