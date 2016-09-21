@@ -19,19 +19,25 @@
     <div class="container">
         <header>
             <!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->
-            <div class="pull-right">
-                <form action="" class="search-form">
-                    <div class="form-group has-feedback">
-                            <label for="search" class="sr-only">Search</label>
-                            <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                    </div>
-                </form>
+            
+            <div id="header-top" class="row pull-right clearfix">                
+                <div class="pull-right">
+                    <a href="" hreflang="fr">VI</a>
+                    <span>|</span>
+                    <a href="" hreflang="fr">ENG</a>
+                </div>         
+                <div id="search-top">
+                    <form action="" class="search-form">
+                        <div class="form-group has-feedback">
+                                <label for="search" class="sr-only">Search</label>
+                                <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        </div>
+                    </form>
+                </div>       
             </div>
              <div id="logo">
-                <a href="/">
-                    <img src="{!! asset('img/logo.png') !!}"alt="Logo">
-                </a>
+                <a href="/"/>
             </div>                 
 
             <div class="brand">{{ trans('front/site.title') }}</div>

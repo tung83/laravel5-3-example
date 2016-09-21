@@ -9,13 +9,20 @@ body {
         position: relative;
     }
     #logo {
-    position: absolute;
-    bottom: 53px;
-    right: 255px;
+        z-index: 3000;
+        position: absolute;
+        bottom: 15px;
+        right: 257px;
     }
-    #logo img{
+    
+    #logo a{
+        display: block;
+        background: transparent url("../img/logo.png") no-repeat center center;
+        background-size: 115px auto;
         width: 115px;
+        height: 120px;
     }
+    
     body > .container{
         width: 1260px;
         padding: 0;
@@ -40,7 +47,28 @@ body {
     .navbar {
       margin-bottom: 0;}
     
-            /*<!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->*/
+    #header-top {
+        width: 340px;
+        margin: 10px 24px;
+    }
+    
+    #header-top  #search-top{
+        width: 265px;
+    }
+    
+    #header-top  > .pull-right, #header-top > .pull-right a{
+        margin-top: 6px;
+        color: #fff;
+        font-weight: bold;
+    }
+    #header-top > .pull-right a:hover, #header-top > .pull-right a:focus{
+        text-decoration: none;
+    }
+    
+    #header-top > div{
+        display: inline-block;
+    }
+    /*<!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->*/
     .search-form .form-group {
         float: right !important;
         transition: all 0.35s, border-radius 0s;
@@ -50,6 +78,7 @@ body {
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
         border-radius: 25px;
         border: 1px solid #ccc;
+        margin-bottom: 0;
     }
     .search-form .form-group input.form-control {
         padding-right: 20px;
