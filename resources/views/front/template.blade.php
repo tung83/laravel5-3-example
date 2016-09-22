@@ -76,6 +76,16 @@
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
+                            @foreach( $menus as $menu )
+                                <li>
+                                    {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.destroy', $project->slug))) !!}
+                                        <a href="{{ route('projects.show', $project->slug) }}">{{ $project->name }}</a>
+                                        (
+                                            {!! link_to_route('projects.edit', 'Edit', array($project->slug), array('class' => 'btn btn-info')) !!},
+                                        )
+                                    {!! Form::close() !!}
+                                </li>
+                            @endforeach
                             <li {!! classActivePath('/') !!}>
                                 {!! link_to('/', trans('front/site.home')) !!}
                             </li>
