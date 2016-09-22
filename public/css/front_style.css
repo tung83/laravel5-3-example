@@ -1,5 +1,11 @@
 @charset "UTF-8";
-
+/* This class is added on scroll */
+.fixed {
+	position: fixed !important; 
+	top: 0; 
+	height: 58px; 
+	z-index: 99999;
+}
 body {
   font-family: Arial,sans-serif;}
 @media (min-width: 992px){    
@@ -29,8 +35,11 @@ body {
     }
     #header-bottom{
         position: absolute;
-        bottom: 5px;
-        width: 100%;
+        width: 1260px;        
+        bottom: 0;
+        padding-bottom: 5px;
+        background: #ca0000 url(../img/index_header_bg.jpg) no-repeat bottom center;
+    }
     }
     #header-right-bottom{
         color: #ffff00;

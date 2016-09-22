@@ -25,7 +25,6 @@
                      <ul>
                         @if(session('locale') == 'vi')
                             <li>
-<!--                                <a class="active" href="#" hreflang="vi">VI</a>-->
                                 {!! link_to('/', 'VI', array('class' => 'active')) !!}
                             </li>
                             <li>
@@ -163,5 +162,6 @@
         @yield('scripts')
 
     <div class="container">
+    <script type="text/javascript" src="{!! asset('js/scroll-nav-fixed.js') !!}"></script>
   </body>
 </html>
