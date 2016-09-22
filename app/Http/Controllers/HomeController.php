@@ -2,8 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CommentRequest;
+use Illuminate\Http\Request;
+use App\Repositories\MenuRepository;
+use App\Models\Menu;
+use Carbon\Carbon;
+
 class HomeController extends Controller
 {
+    /**
+     * The CommentRepository instance.
+     *
+     * @var \App\Repositories\MenuRepository
+     */    
+    protected $menuRepository;
+    
+    
+    public function __construct(MenuRepository $menuRepository)
+    {
+        $this->menuRepository = $menuRepository;
+    }
+    
     /**
      * Display the home page.
      *
@@ -11,6 +30,8 @@ class HomeController extends Controller
      */
     public function __invoke()
     {
-        return view('front.index');
+        $menus = $this->menuRepository->getAll();
+        $menus2 = Menu::all();
+        return view('front.index', compact('menus2'));
     }
 }
