@@ -120,7 +120,7 @@ return [
     ! and at least, add the ISO code in languages array.
     */
 
-    'languages' => ['en', 'fr', 'pt-BR'],   
+    'languages' => ['en', 'vi'],   
 
     /*
     |--------------------------------------------------------------------------

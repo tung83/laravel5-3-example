@@ -22,9 +22,30 @@
             
             <div id="header-top" class="row pull-right clearfix">                
                 <div class="pull-right">
-                    <a href="" hreflang="fr">VI</a>
-                    <span>|</span>
-                    <a href="" hreflang="fr">ENG</a>
+                     <ul>
+                        @if(session('locale') == 'vi')
+                            <li>
+<!--                                <a class="active" href="#" hreflang="vi">VI</a>-->
+                                {!! link_to('/', 'VI', array('class' => 'active')) !!}
+                            </li>
+                            <li>
+                                <span>|</span>
+                            </li>
+                            <li>                  
+                                {!! link_to('language/en', 'ENG') !!}
+                            </li>
+                        @else
+                            <li>                                                           
+                                {!! link_to('language/vi', 'VI') !!}
+                            </li>
+                            <li>
+                                <span>|</span>
+                            </li>
+                            <li>                               
+                                {!! link_to('#', 'ENG', array('class' => 'active')) !!}
+                            </li>
+                        @endif
+                    </ul>
                 </div>         
                 <div id="search-top">
                     <form action="" class="search-form">

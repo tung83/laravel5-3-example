@@ -55,7 +55,16 @@ body {
     #header-top  #search-top{
         width: 265px;
     }
-    
+    #header-top  > .pull-right ul{        
+        padding: 0;
+        list-style: none;
+    }
+    #header-top  > .pull-right li{        
+        display: inline;
+    }
+    #header-top > .pull-right a.active{
+        color: #fffc00;
+    }
     #header-top  > .pull-right, #header-top > .pull-right a{
         margin-top: 6px;
         color: #fff;
