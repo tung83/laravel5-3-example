@@ -1,5 +1,4 @@
-@extends('front.template')
-
+@extends('front.template', ['menus' => $menus])
 @section('main')
     <div class="row">
         <div class="box">

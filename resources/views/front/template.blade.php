@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ trans('front/site.title') }}</title>
         <meta name="description" content="">    
+        <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="{!! asset('img/logo.png') !!}" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -77,55 +78,10 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             @foreach( $menus as $menu )
-                                <li>
-                                    {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.destroy', $project->slug))) !!}
-                                        <a href="{{ route('projects.show', $project->slug) }}">{{ $project->name }}</a>
-                                        (
-                                            {!! link_to_route('projects.edit', 'Edit', array($project->slug), array('class' => 'btn btn-info')) !!},
-                                        )
-                                    {!! Form::close() !!}
-                                </li>
-                            @endforeach
-                            <li {!! classActivePath('/') !!}>
-                                {!! link_to('/', trans('front/site.home')) !!}
+                            <li>                            
+                                {!! link_to($menu->view, (session('locale') == 'vi') ? $menu->title : $menu->e_title) !!}                            
                             </li>
-                            @if(session('statut') == 'visitor' || session('statut') == 'user')
-                                <li {!! classActivePath('contact/create') !!}>
-                                    {!! link_to('contact/create', trans('front/site.contact')) !!}
-                                </li>
-                            @endif
-                            <li {!! classActiveSegment(1, ['articles', 'blog']) !!}>
-                                {!! link_to('articles', trans('front/site.blog')) !!}
-                            </li>
-                            @if(Request::is('auth/register'))
-                                <li class="active">
-                                    {!! link_to('auth/register', trans('front/site.register')) !!}
-                                </li>
-                            @elseif(Request::is('password/email'))
-                                <li class="active">
-                                    {!! link_to('password/email', trans('front/site.forget-password')) !!}
-                                </li>
-                            @else
-                                @if(session('statut') == 'visitor')
-                                    <li {!! classActivePath('login') !!}>
-                                        {!! link_to('login', trans('front/site.connection')) !!}
-                                    </li>
-                                @else
-                                    @if(session('statut') == 'admin')
-                                        <li>
-                                            {!! link_to_route('admin', trans('front/site.administration')) !!}
-                                        </li>
-                                    @elseif(session('statut') == 'redac') 
-                                        <li>
-                                            {!! link_to('blog', trans('front/site.redaction')) !!}
-                                        </li>
-                                    @endif
-                                    <li>
-                                        {!! link_to('/logout', trans('front/site.logout'), ['id' => "logout"]) !!}
-                                        {!! Form::open(['url' => '/logout', 'id' => 'logout-form']) !!}{!! Form::close() !!}
-                                    </li>
-                                @endif
-                            @endif                        
+                            @endforeach                    
                         </ul>
                     </div>
                 </nav>

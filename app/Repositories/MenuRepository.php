@@ -33,10 +33,13 @@ class MenuRepository extends BaseRepository
 //     * @param  array $inputs
 //     * @return void
 //     */
-//    public function store($inputs)
-//    {
-//        $this->model->create($inputs);
-//    }
+        public function getActive()
+        {
+            return $this->model
+                    ->whereActive(true)
+                    ->orderBy('ind', 'asc')
+                    ->get();
+        }
 //
 //    /**
 //     * Update a menu.

@@ -30,8 +30,7 @@ class HomeController extends Controller
      */
     public function __invoke()
     {
-        $menus = $this->menuRepository->getAll();
-        $menus2 = Menu::all();
-        return view('front.index', compact('menus2'));
+        $menus = $this->menuRepository->getActive();
+        return view('front.index', compact('menus'));
     }
 }

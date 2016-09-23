@@ -37,7 +37,7 @@ body {
         position: absolute;
         width: 1260px;        
         bottom: 0;
-        padding-bottom: 5px;
+        padding-bottom: 9px;
         background: #ca0000 url(../img/index_header_bg.jpg) no-repeat bottom center;
     }
     }
@@ -51,10 +51,14 @@ body {
     }
     
     .nav > li > a {
-      padding: 15px 23px 15px 23px; }
+      padding: 15px 10px 15px 23px;    
+        font-family: "Arial Narrow", Arial, sans-serif;
+        font-weight: normal;
+       }
     
     .navbar {
-      margin-bottom: 0;}
+      margin-bottom: 0;
+     }
     
     #header-top {
         width: 340px;
@@ -137,6 +141,5 @@ body {
         color: #3596e0;
         left: initial;
         font-size: 14px;
-        }
-
+        }      
 }
