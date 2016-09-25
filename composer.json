@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "5.3.*",
         "barryvdh/laravel-elfinder": "^0.3.8",
-        "magyarjeti/laravel-lipsum": "^1.1"
+        "magyarjeti/laravel-lipsum": "^1.1",
+        "cornford/googlmapper": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

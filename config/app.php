@@ -210,6 +210,7 @@ return [
         Magyarjeti\LaravelLipsum\LipsumServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
         App\Providers\ElfinderServiceProvider::class,
+        Cornford\Googlmapper\MapperServiceProvider::class,
 
     ],
 
@@ -260,6 +261,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
         'Lipsum' => Magyarjeti\LaravelLipsum\LipsumFacade::class,
+        'Mapper'    => Cornford\Googlmapper\Facades\MapperFacade::class
     ],
 
 ];

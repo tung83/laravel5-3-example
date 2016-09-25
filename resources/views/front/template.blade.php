@@ -23,28 +23,16 @@
             
             <div id="header-top" class="row pull-right clearfix">                
                 <div class="pull-right">
-                     <ul>
-                        @if(session('locale') == 'vi')
-                            <li>
-                                {!! link_to('/', 'VI', array('class' => 'active')) !!}
-                            </li>
-                            <li>
-                                <span>|</span>
-                            </li>
-                            <li>                  
-                                {!! link_to('language/en', 'ENG') !!}
-                            </li>
-                        @else
-                            <li>                                                           
-                                {!! link_to('language/vi', 'VI') !!}
-                            </li>
-                            <li>
-                                <span>|</span>
-                            </li>
-                            <li>                               
-                                {!! link_to('#', 'ENG', array('class' => 'active')) !!}
-                            </li>
-                        @endif
+                    <ul>
+                        <li>
+                             {!! (session('locale') == 'vi') ? link_to('/', 'VI', array('class' => 'active')) : link_to('language/vi', 'VI') !!}
+                         </li>
+                         <li>
+                             <span>|</span>
+                         </li>
+                         <li>                  
+                             {!! (session('locale') == 'vi') ? link_to('language/en', 'ENG') : link_to('#', 'ENG', array('class' => 'active')) !!}
+                         </li>
                     </ul>
                 </div>         
                 <div id="search-top">
@@ -108,7 +96,7 @@
                 <div class="row footer-details clearfix">
                     <div id="footer-company-info" class="col-sm-3">                
                         <div id="company-info">
-                            <img alt="" src="/file/ckfinder/userfiles/images/logo.png" style="height: 52px; width: 177px">                           
+                            <img alt="" src="" style="height: 52px; width: 177px">                           
                         </div>
                     <hr>
                         <div id="address-details" style="color: #bababa">
@@ -121,14 +109,29 @@
                             <p class="website">Website: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>
                         </div>       
                     </div>
-                    <div id="google-map" class="col-sm-3">                        
-                        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.map-embed.com" id="get-map-data">embed google map</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(10.818838,106.6897265),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(10.818838, 106.6897265)});infowindow = new google.maps.InfoWindow({content:"<b>PS Media Co.Ltd</b><br/>624 L&ecirc; Quang &#272;&#7883;nh, G&ograve; V&#7845;p, H&#7891; Ch&iacute; Minh, Vi&#7879;t Nam<br/> " });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>                        
-                    </div>                                 
-                    <div id="footer-introduction" class="col-sm-3">
-                       
+                    <div id="google-map" class="col-sm-3">      
+                        {!! Mapper::render() !!} 
+                     </div>                                 
+                    <div id="footer-introduction" class="col-sm-3 pull-right">
+                        <img alt="" src="" style="height: 52px; width: 177px">    
+                        <p class="readmore">gioi thieu</p>
                     </div>                              
                     <div id="footer-services" class="col-sm-3">
-                        <ul>
+                        <ul id="footer-social-items">
+                            <li>
+                                <a class="footer-facebook"></a>
+                            </li>
+                            <li>
+                                <a class="footer-tweeter"></a>
+                            </li>
+                            <li>
+                                <a class="footer-skype"></a>
+                            </li>
+                            <li>
+                                <a class="footer-goole-plus"></a>
+                            </li>
+                        </ul>
+                        <ul id="footer-services">
                             <li class="clearfix">
                                 <a href="/trang-chu">Home</a>
                             </li>
@@ -154,7 +157,7 @@
                     </div>
                 </div>
                 <div class="copyright text-center">
-                        Copyright © 2016 <a>PSP Media</a>. All rights reserved
+                        Copyright © 2016 <a>PS Media</a>. All rights reserved
                 </div>
         </footer>
 
