@@ -46,7 +46,7 @@
                 </div>       
             </div>
              <div id="logo">
-                <a href="/"/>
+                <a href="{{ route('home') }}"/>
             </div>                 
 
             <div class="brand">{{ trans('front/site.title') }}</div>
