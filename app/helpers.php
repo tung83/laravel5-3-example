@@ -51,3 +51,13 @@ if (!function_exists('formatDate')) {
     }
 }
 
+if (!function_exists('languageTransform')) {
+    function languageTransform($model, $attributeName)
+    {
+        if(Session::has('locale')  && Session::get('locale') == 'en'){
+            $attributeName = 'e_'.$attributeName;
+        }
+        return $model->$attributeName;
+    }
+}
+

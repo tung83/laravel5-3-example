@@ -67,7 +67,7 @@
                         <ul class="nav navbar-nav">
                             @foreach( $menus as $menu )
                             <li>                            
-                                {!! link_to($menu->view, (session('locale') == 'vi') ? $menu->title : $menu->e_title) !!}                            
+                                {!! link_to($menu->view, languageTransform($menu, 'title')) !!}                            
                             </li>
                             @endforeach                    
                         </ul>
