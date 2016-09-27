@@ -10,7 +10,8 @@
         "laravelcollective/html": "5.3.*",
         "barryvdh/laravel-elfinder": "^0.3.8",
         "magyarjeti/laravel-lipsum": "^1.1",
-        "cornford/googlmapper": "2.*"
+        "cornford/googlmapper": "2.*",
+        "soerenkroell/composer-slick": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

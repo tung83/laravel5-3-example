@@ -17,4 +17,12 @@ elixir(mix => {
         ],
         'public/css/back.css'
     );
+  
+});
+elixir(mix => {
+    mix.copy('vendor/soerenkroell/composer-slick/slick/fonts', 'public/fonts/slick')
+        .copy('vendor/soerenkroell/composer-slick/slick/ajax-loader.gif', 'public/img')
+        .sass(['slick-theme.scss',
+               'slick.scss'],'vendor/soerenkroell/composer-slick/slick', 'public/css/slick.css')
+        .scripts(['slick.js'],'vendor/soerenkroell/composer-slick/slick', 'public/js/slick.js');
 });
