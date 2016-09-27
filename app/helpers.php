@@ -61,3 +61,14 @@ if (!function_exists('languageTransform')) {
     }
 }
 
+if (!function_exists('getCategorySlugLink')) {
+    function getCategorySlugLink($menuName, $category)
+    {
+        $title_link = languageTransform($category, 'title');
+        $menu_link = trans('front/site.'. $menuName);
+        return $link_to_service = '/' . $menu_link . '/' . str_slug($title_link) .'-p' . strval($category->id);
+    }
+}
+
+
+

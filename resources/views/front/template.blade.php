@@ -67,7 +67,7 @@
                         <ul class="nav navbar-nav">
                             @foreach( $menus as $menu )
                             <li>                            
-                                {!! link_to($menu->view, languageTransform($menu, 'title')) !!}                            
+                                {!! link_to(languageTransform($menu, 'view'), languageTransform($menu, 'title')) !!}                            
                             </li>
                             @endforeach                    
                         </ul>
