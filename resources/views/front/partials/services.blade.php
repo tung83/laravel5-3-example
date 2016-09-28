@@ -1,8 +1,11 @@
 
-<div class="row">
+<div class=" row">
+    <div class="slick">
     @foreach($services as $service_category) 
-        <div class="col-md-2">
+        <div >
                  {!! link_to(getCategorySlugLink('service', $service_category) , languageTransform($service_category, 'title')) !!}   
         </div>
     @endforeach
+	
+    </div>
 </div>

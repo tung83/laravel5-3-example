@@ -84,10 +84,14 @@ $style = [
                                     <td style="{{ $fontFamily }} {{ $style['email-body_cell'] }}">
                                         <!-- Greeting -->
                                         <h1 style="{{ $style['header-1'] }}">
-                                            @if ($level == 'error')
-                                                Whoops!
+                                            @if (! empty($greeting))
+                                                {{ $greeting }}
                                             @else
-                                                Hello!
+                                                @if ($level == 'error')
+                                                    Whoops!
+                                                @else
+                                                    Hello!
+                                                @endif
                                             @endif
                                         </h1>
 
@@ -136,7 +140,7 @@ $style = [
 
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            {{ trans('front/site.salutation') }},<br>{{ config('app.name') }}
+                                            Regards,<br>{{ config('app.name') }}
                                         </p>
 
                                         <!-- Sub Copy -->
@@ -145,8 +149,10 @@ $style = [
                                                 <tr>
                                                     <td style="{{ $fontFamily }}">
                                                         <p style="{{ $style['paragraph-sub'] }}">
-                                                            {{ trans('front/site.notification-endtext') }}
+                                                            If you’re having trouble clicking the "{{ $actionText }}" button,
+                                                            copy and paste the URL below into your web browser:
                                                         </p>
+
                                                         <p style="{{ $style['paragraph-sub'] }}">
                                                             <a style="{{ $style['anchor'] }}" href="{{ $actionUrl }}" target="_blank">
                                                                 {{ $actionUrl }}

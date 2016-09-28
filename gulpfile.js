@@ -22,7 +22,6 @@ elixir(mix => {
 elixir(mix => {
     mix.copy('vendor/soerenkroell/composer-slick/slick/fonts', 'public/fonts/slick')
         .copy('vendor/soerenkroell/composer-slick/slick/ajax-loader.gif', 'public/img')
-        .sass(['slick-theme.scss',
-               'slick.scss'],'vendor/soerenkroell/composer-slick/slick', 'public/css/slick.css')
-        .scripts(['slick.js'],'vendor/soerenkroell/composer-slick/slick', 'public/js/slick.js');
+        .sass(['slick.scss','slick-theme.scss'], 'public/css/slick.css','vendor/soerenkroell/composer-slick/slick')
+        .scripts(['slick.js'], 'public/js/slick.js','vendor/soerenkroell/composer-slick/slick');
 });

@@ -3633,6 +3633,7 @@ tbody.collapse.in {
 .navbar {
   position: relative;
   min-height: 50px;
+  margin-bottom: 20px;
   border: 1px solid transparent; }
   .navbar:before, .navbar:after {
     content: " ";
@@ -3656,6 +3657,8 @@ tbody.collapse.in {
 
 .navbar-collapse {
   overflow-x: visible;
+  padding-right: 15px;
+  padding-left: 15px;
   border-top: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch; }
@@ -3906,6 +3909,9 @@ tbody.collapse.in {
     .navbar-right ~ .navbar-right {
       margin-right: 0; } }
 
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7; }
   .navbar-default .navbar-brand {
     color: #777; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -5767,6 +5773,8 @@ button.close {
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 body {
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: url("../img/bg.jpg") no-repeat center center fixed;
   background-size: cover;
   -o-background-size: cover; }
 
@@ -5801,7 +5809,8 @@ hr {
 
 .navbar-nav {
   text-transform: uppercase;
-  font-weight: bold; }
+  font-weight: 400;
+  letter-spacing: 3px; }
 
 .img-full {
   min-width: 100%; }
@@ -5886,16 +5895,19 @@ footer p {
   .navbar {
     min-height: 0; }
   .navbar-default {
-    border: none; }
+    border: none;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.9); }
+  .nav > li > a {
+    padding: 35px; }
   .navbar-nav > li > a {
-    line-height: normal; } 
-    .navbar-nav {
+    line-height: normal; }
+  .navbar-nav {
     display: table;
     float: none;
     margin: 0 auto;
     table-layout: fixed;
-    font-size: 16px;
-    } }
+    font-size: 1.25em; } }
 
 @media screen and (min-width: 1200px) {
   .box:after {
