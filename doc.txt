@@ -1,6 +1,24 @@
 composer dump-autoload
 http://packalyst.com/packages/package/ignasbernotas/laravel-model-generator
 https://github.com/bradcornford/Googlmapper
+http://tutsme-webdesign.info/bootstrap-3-toggable-tabs-and-pills/
+http://sevenx.de/demo/bootstrap-carousel/index.html#.V-yHZyGLSUk
+
+add virtual host;
+wamp D:\wamp64\bin\apache\apache2.4.18\conf\extra
+<VirtualHost *:8088>
+	ServerName acura
+	DocumentRoot D:/wamp64/www/acura
+	<Directory  "D:/wamp64/www/acura/">
+		Options +Indexes +FollowSymLinks +MultiViews
+		AllowOverride All
+		Require local
+	</Directory>
+</VirtualHost>
+
+host C:\Windows\System32\drivers\etc
+127.0.0.1			acura
+
 
 
 --
