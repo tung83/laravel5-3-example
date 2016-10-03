@@ -20,9 +20,12 @@
   <body>
     <div class="container">
         <header class="row">
+             <div id="logo">
+                <a href="{{ route('home') }}"/>
+            </div>    
             <!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->
             
-            <div id="header-top" class="row pull-right clearfix">                
+            <div id="header-top" class="row pull-right">                
                 <div class="pull-right">
                     <ul>
                         <li>
@@ -45,14 +48,12 @@
                         </div>
                     </form>
                 </div>       
-            </div>
-             <div id="logo">
-                <a href="{{ route('home') }}"/>
-            </div>                 
+            </div>             
 
             <div class="brand">{{ trans('front/site.title') }}</div>
             <div class="address-bar">{{ trans('front/site.sub-title') }}</div>
             <div id="flags" class="text-center"></div>
+            <div class="clearfix"></div>
             <div id="header-bottom">
                 <nav class="navbar navbar-default pull-left">
                     <div class="navbar-header">
