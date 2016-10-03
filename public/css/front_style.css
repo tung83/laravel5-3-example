@@ -30,7 +30,7 @@ body {
     }
     
     body > .container{
-        width: 1260px;
+        width: 1230px;
         padding: 0;
     }
     #header-bottom{
@@ -150,4 +150,43 @@ body {
     footer #google-map{
         height: 250px;
     }
+    .service{
+        background-color: #ca0000; 
+        
+    }
+    .slick{ 
+        padding: 100px 0 70px 0; 
+        margin: 0 15px;
+    }
+    .slick h4, .slick p{
+        color: #fff;        
+    }
+    .slick a.slick-slide:hover, .slick a.slick-slide:focus {
+        text-decoration: none;
+        background-color: #ca0000;
+    }
+    .service-ico {
+        background-image: url('../img/service-icons.png');
+        background-repeat: no-repeat;   
+        width: 107px;
+        height: 88px;
+        display: inline-block;
+    }
+        .service-ico.search-barcode {
+          background-position: 0 0;
+        }
+        .service-ico.hosting {
+          background-position: -107px 0;
+        }
+        .service-ico.mouse {
+          background-position: -214px 0;
+        }
+        .service-ico.social-network {
+        }
+        .service-ico.search-web {
+          background-position: -321px 0;
+        }
+        .service-ico.global {
+          background-position: -428px 0;
+        }
 }

@@ -19,7 +19,7 @@
     </head>
   <body>
     <div class="container">
-        <header>
+        <header class="row">
             <!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->
             
             <div id="header-top" class="row pull-right clearfix">                
