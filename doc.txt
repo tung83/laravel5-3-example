@@ -78,13 +78,46 @@ CREATE TABLE `service_category` (
   `active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `laravel53`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service_category`
+--
+
+CREATE TABLE `service_category` (
+  `id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `sum` text NOT NULL,
+  `meta_keyword` text NOT NULL,
+  `meta_description` text NOT NULL,
+  `e_title` text NOT NULL,
+  `e_sum` text NOT NULL,
+  `e_meta_keyword` text NOT NULL,
+  `e_meta_description` text NOT NULL,
+  `img` text NOT NULL,
+  `icon` text NOT NULL,
+  `pId` int(11) NOT NULL,
+  `lev` int(11) NOT NULL,
+  `ind` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Dumping data for table `service_category`
 --
 
 INSERT INTO `service_category` (`id`, `title`, `sum`, `meta_keyword`, `meta_description`, `e_title`, `e_sum`, `e_meta_keyword`, `e_meta_description`, `img`, `icon`, `pId`, `lev`, `ind`, `active`) VALUES
-(1, 'Thiết kế website', '', '', 'đây là mô tả', 'Dish Dryer', '', '', '', '1457863707011.png', 'global', 0, 0, 0, 1),
-(2, 'Brand name', '', '', '', 'Range Hood', '', '', '', '1458700122mayhutkhoi1.jpg', 'search-barcode', 0, 0, 0, 1),
+(1, 'Thiết kế website', 'Trận hòa 1-1 với Stoke City khiến Man Utd chỉ có 13 điểm sau bảy trận đầu tại Ngoại hạng Anh 2016-2017, ít hơn ba điểm so với cùng kỳ năm ngoái. Khi ấy, dưới trướng Louis van Gaal, Man Utd giành được 16 điểm.', '', 'đây là mô tả', 'Dish Dryer', 'This one is totally for developers. All the information and documentation is directly on GitHub. It seems like there was a separate Laravel 4 version of this CMS, and now it’s migrating to 5.2 (not 5.1 or 5.0, sounds impressive!).', '', '', '1457863707011.png', 'global', 0, 0, 0, 1),
+(2, 'Brand name', 'Sau hai thất bại liên tiếp dưới tay Man City và Watford, đội bóng của Mourinho gỡ gạc phần nào thể diện khi đè bẹp Leicester City với tỷ số 4-1. Tuy nhiên, Man Utd tiếp tục cho thấy sự bất ổn về phong độ ở trận gặp Stoke.', '', '', 'Range Hood', 'I succeeded at installing the system, but since I was testing on my Windows machine with XAMPP and TypiCMS requires Node.js and Gulp – I didn’t succeed at compiling front-end stuff. This is how it looked:', '', '', '1458700122mayhutkhoi1.jpg', 'search-barcode', 0, 0, 0, 1),
 (3, 'Bếp gas', '', '', '', 'Gas Cooker', '', '', '', '1458613922bepgas.jpg', 'social-network', 0, 0, 0, 1),
 (4, 'Bếp gas âm', '', '', '', 'Built-In Hob', '', '', '', '1458626544bepgasam.jpg', 'hosting', 0, 0, 0, 1),
 (5, 'Thiết bị lọc nước', '', '', '', 'Water Filter Appliances', '', '', '', '1458636977thietbilocnuoc2.png', 'mouse', 0, 0, 3, 1),
@@ -109,6 +142,9 @@ ALTER TABLE `service_category`
 --
 ALTER TABLE `service_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
 
