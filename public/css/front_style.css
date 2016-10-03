@@ -6,6 +6,7 @@
 	height: 58px; 
 	z-index: 99999;
 }
+
 html, body {
   overflow-x:hidden 
 } 
@@ -70,7 +71,16 @@ body {
     .navbar {
       margin-bottom: 0;
      }
-    
+     .navbar-collapse {
+        padding-right: 0;
+        padding-left: 0;
+     }
+    .navbar-nav {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0; }
+
     #header-top {
         width: 340px;
         margin: 10px 24px;

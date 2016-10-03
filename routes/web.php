@@ -7,6 +7,12 @@ Route::get('/', 'HomeController')->name('home');
 Route::get('language/{lang}', 'LanguageController')
     ->where('lang', implode('|', config('app.languages')));
 
+// Service
+Route::get('service', 'ServiceController');
+Route::get('service/{serviceCategory}', 'ServiceController');
+Route::get('dich-vu', 'ServiceController');
+Route::get('dich-vu/{serviceCategory}', 'ServiceController');
+
 // Admin
 Route::get('admin', 'AdminController')->name('admin');
 
