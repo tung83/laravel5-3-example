@@ -17,4 +17,5 @@ return [
     'yes' => 'Yes',
     'no' => 'No',
     'service' => 'service'
+    'projects' => 'PROJECTS'
 ];

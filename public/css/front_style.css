@@ -190,6 +190,14 @@ body {
         .service-ico.global {
           background-position: -428px 0;
         }
+        .project{
+            background-color: #fff;
+        }
+    .project h2.title {
+    padding: 0 60px 5px 60px;
+    border-bottom: 4px solid #ff0000;
+    display: inline-block;
+}
         
 @media (max-width: 767px){
     .navbar {

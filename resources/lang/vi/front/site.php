@@ -16,5 +16,6 @@ return [
     'salutation' => 'Cordialement',
     'yes' => 'Oui',
     'no' => 'Non',
-    'service' => 'dich-vu'
+    'service' => 'dich-vu',    
+    'projects' => 'DỰ ÁN'
 ];
