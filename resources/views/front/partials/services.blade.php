@@ -5,12 +5,14 @@
             <a href="{{ url(getCategorySlugLink('service', $service_category)) }}">
                 <i class="service-ico {{$service_category->icon}}">
                 </i>
-                <h4>
+                <h5>
                     {{languageTransform($service_category, 'title')}}                
-                </h4>
-                <p>
-                    {{languageTransform($service_category, 'sum')}}                   
-                </p>        
+                </h5>
+                <div class="service-sum">
+                    <p>
+                        {{languageTransform($service_category, 'sum')}}                   
+                    </p>        
+                </div>
             </a>
         @endforeach	
     </div>

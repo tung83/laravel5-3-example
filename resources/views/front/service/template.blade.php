@@ -184,14 +184,14 @@
                     autoplaySpeed: 2000,
                     infinite: true,
                     speed: 300,
-                    slidesToShow: 6,
+                    slidesToShow: 4,
                     slidesToScroll: 1,
                     responsive: [
                       {
                         breakpoint: 1024,
                         settings: {
                           slidesToShow: 3,
-                          slidesToScroll: 1,
+                          slidesToScroll: 3,
                           infinite: true,
                           dots: true
                         }
@@ -200,7 +200,7 @@
                         breakpoint: 600,
                         settings: {
                           slidesToShow: 2,
-                          slidesToScroll: 1
+                          slidesToScroll: 2
                         }
                       },
                       {
@@ -217,23 +217,6 @@
                   });
 
             });
-        $(function() {
-            var divh=$('.service-sum').height();
-            $('.service-sum p').each( function( index, element ){
-                while ($(this).outerHeight()>divh) {
-                    $(this).text(function (index, text) {
-                    return text.replace(/\W*\s(\S)*$/, '...');
-                });
-            }
-            });
-            $( ".slick-slide" ).hover(
-                function() {
-                  $( this ).find( "h5, p" ).css( "color", "#ffca9d" );
-                },function() {
-                  $( this ).find( "h5, p" ).css( "color", "" );
-                }
-              );
-        });
         </script>
 
         @yield('scripts')

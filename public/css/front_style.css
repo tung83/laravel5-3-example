@@ -12,64 +12,27 @@ html, body {
 } 
 body {
   font-family: Arial,sans-serif;}
-/*@media (max-width: 767px){
-    body {
-        padding-right: 20px;
-        padding-left: 20px;
-    } .navbar {
-       padding:0 20px;
-    } 
- }*/
-@media (min-width: 992px){    
-    header {
-        background: #ca0000 url("../img/index_header_bg.jpg") no-repeat center center;
-        height: 789px;
-        position: relative;
-    }
-    #logo {
-        z-index: 3000;
-        position: absolute;
-        bottom: 15px;
-        right: 257px;
-    }
-    
-    #logo a{
-        display: block;
-        background: transparent url("../img/logo.png") no-repeat center center;
-        background-size: 115px auto;
-        width: 115px;
-        height: 120px;
-    }
-    
-    body > .container{
-        width: 1230px;
-        padding: 0;
-    }
-    #header-bottom{
-        position: absolute;
-        width: 1260px;        
-        bottom: 0;
-        padding-bottom: 9px;
-        background: #ca0000 url(../img/index_header_bg.jpg) no-repeat bottom center;
-    }
-    }
+
     #header-right-bottom{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 18px;
         color: #ffff00;
         margin-top: 15px;
         margin-right: 12px;
     }
     #header-right-bottom span{
-        margin-left: 10px; 
+        margin-left: 15px; 
     }
     
     .nav > li > a {
       padding: 15px 10px 15px 23px;    
-        font-family: "Arial Narrow", Arial, sans-serif;
-        font-weight: normal;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: bold;
        }
     
     .navbar {
       margin-bottom: 0;
+      float: left;
      }
      .navbar-collapse {
         padding-right: 0;
@@ -176,15 +139,32 @@ body {
         
     }
     .slick{ 
-        padding: 100px 0 70px 0; 
+        padding: 100px 0 50px 0; 
         margin: 0 15px;
     }
-    .slick h4, .slick p{
+    .slick-slide {
+        margin: 0 35px;
+      }
+    .slick h5, .slick p{
         color: #fff;        
     }
+    .slick h5:hover, .slick p:hover{
+        color: inherit;      
+    }
+    .slick p{
+        font-size: 12px;        
+    }
+    
+    .slick h5{
+        text-transform: uppercase;
+        font-weight: bold;
+    }
     .slick a.slick-slide:hover, .slick a.slick-slide:focus {
-        text-decoration: none;
-        background-color: #ca0000;
+        text-decoration: none; 
+        color: #ddd;      
+    }
+    .service-sum {
+        height: 95px;
     }
     .service-ico {
         background-image: url('../img/service-icons.png');
@@ -210,4 +190,45 @@ body {
         .service-ico.global {
           background-position: -428px 0;
         }
+        
+@media (max-width: 767px){
+    .navbar {
+        width: 100%;
+    } 
+    #header-right-bottom{        
+        margin-top: 0;
+    }
+}
+@media (min-width: 992px){    
+    header {
+        background: #ca0000 url("../img/index_header_bg.jpg") no-repeat center center;
+        height: 789px;
+        position: relative;
+    }
+    #logo {
+        z-index: 3000;
+        position: absolute;
+        bottom: 15px;
+        right: 257px;
+    }
+    
+    #logo a{
+        display: block;
+        background: transparent url("../img/logo.png") no-repeat center center;
+        background-size: 115px auto;
+        width: 115px;
+        height: 120px;
+    }
+    
+    body > .container{
+        width: 1230px;
+        padding: 0;
+    }
+    #header-bottom{
+        position: absolute;
+        width: 1260px;        
+        bottom: 0;
+        padding-bottom: 9px;
+        background: #ca0000 url(../img/index_header_bg.jpg) no-repeat bottom center;
+    }
 }

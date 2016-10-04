@@ -6,12 +6,15 @@
 $(document).ready(function(){
     $(window).bind('scroll', function() {
     var navHeight = 725;
-                  if ($(window).scrollTop() > navHeight) {
-                          $('#header-bottom').addClass('fixed');
-                  }
-                  else {
-                          $('#header-bottom').removeClass('fixed');
-                  }
-         });
+    if($(window).width() >= 992)
+    {
+        if ( $(window).scrollTop() > navHeight) {
+                $('#header-bottom').addClass('fixed');
+        }
+        else {
+                $('#header-bottom').removeClass('fixed');
+        }
+    }
+    });
  });
 

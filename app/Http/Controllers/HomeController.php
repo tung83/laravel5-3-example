@@ -40,7 +40,7 @@ class HomeController extends Controller
         //$this->menuRepository = new MenuRepository(new Menu());
         Mapper::map(52.381128999999990000, 0.470085000000040000)->marker(53.381128999999990000, -1.470085000000040000, ['markers' => ['symbol' => 'circle', 'scale' => 1000, 'animation' => 'DROP']]);
         $menus = $this->menuRepository->getActive();
-        $services = $this->serviceCategoryRepository->getActive(6);
+        $services = $this->serviceCategoryRepository->getActive(10);
         return view('front.index', compact('menus', 'services'));
     }
 }
