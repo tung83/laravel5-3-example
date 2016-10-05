@@ -17,5 +17,6 @@ return [
     'yes' => 'Oui',
     'no' => 'Non',
     'service' => 'dich-vu',    
-    'projects' => 'DỰ ÁN'
+    'projects' => 'DỰ ÁN',
+    'project' => 'du-an'
 ];

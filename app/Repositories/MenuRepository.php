@@ -16,44 +16,4 @@ class MenuRepository extends BaseRepository
     {
         $this->model = $menu;
     }
-
-    /**
-     * Get menus collection.
-     *
-     * @return Illuminate\Support\Collection
-     */
-//    public function getMenusOrder()
-//    {
-//        return $this->model->oldest('seen')->latest()->get();
-//    }
-//
-//    /**
-//     * Store a menu.
-//     *
-//     * @param  array $inputs
-//     * @return void
-//     */
-        public function getActive()
-        {
-            return $this->model
-                    ->whereActive(true)
-                    ->orderBy('ind', 'asc')
-                    ->get();
-        }
-//
-//    /**
-//     * Update a menu.
-//     *
-//     * @param  bool  $seen
-//     * @param  int   $id
-//     * @return void
-//     */
-//    public function update($seen, $id)
-//    {
-//        $menu = $this->getById($id);
-//
-//        $menu->seen = $seen == 'true';
-//
-//        $menu->save();
-//    }
 }

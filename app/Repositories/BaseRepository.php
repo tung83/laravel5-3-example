@@ -37,4 +37,21 @@ abstract class BaseRepository
     {
         return $this->model->all();
     }
+    
+    public function getActive($n=null)
+    {
+        if($n){
+            return $this->model
+                    ->whereActive(true)
+                    ->orderBy('ind', 'asc')
+                    ->paginate($n);
+        }
+        else{ 
+            return $this->model
+                    ->whereActive(true)
+                    ->orderBy('ind', 'asc')
+                    ->get();
+
+        }
+    }
 }

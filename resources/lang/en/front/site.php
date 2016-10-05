@@ -16,6 +16,7 @@ return [
     'salutation' => 'Regards',
     'yes' => 'Yes',
     'no' => 'No',
-    'service' => 'service'
-    'projects' => 'PROJECTS'
+    'service' => 'service',
+    'projects' => 'PROJECTS',
+    'project' => 'project',
 ];

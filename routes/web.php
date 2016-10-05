@@ -13,6 +13,12 @@ Route::get('service/{serviceCategory}', 'ServiceController');
 Route::get('dich-vu', 'ServiceController');
 Route::get('dich-vu/{serviceCategory}', 'ServiceController');
 
+// Project
+Route::get('project', 'ProjectController');
+Route::get('project/{projectCategory}', 'ProjectAjaxController@partialCategory');
+Route::get('du-an', 'ProjectController');
+Route::get('du-an/{projectCategory}', 'ProjectController');
+
 // Admin
 Route::get('admin', 'AdminController')->name('admin');
 

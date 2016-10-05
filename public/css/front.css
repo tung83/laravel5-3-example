@@ -3909,9 +3909,6 @@ tbody.collapse.in {
     .navbar-right ~ .navbar-right {
       margin-right: 0; } }
 
-.navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7; }
   .navbar-default .navbar-brand {
     color: #777; }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
@@ -5879,9 +5876,7 @@ footer p {
   .navbar {
     min-height: 0; }
   .navbar-default {
-    border: none;
-    background: #fff;
-    background: rgba(255, 255, 255, 0.9); }
+    border: none; }
   .nav > li > a {
     padding: 35px; }
   .navbar-nav > li > a {

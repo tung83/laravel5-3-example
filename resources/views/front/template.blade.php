@@ -234,6 +234,26 @@
                 }
               );
         });
+        
+         $(document).on('change', ':checkbox[name="seen"]', function() {
+            $(this).parents('tr').toggleClass('warning');
+            $(this).hide().parent().append('<i class="fa fa-refresh fa-spin"></i>');
+            $.ajax({
+                url: '{{ url('postseen') }}' + '/' + this.value,
+                type: 'GET',
+                data: "seen=" + this.checked
+            })
+            .done(function() {
+                $('.fa-spin').remove();
+                $('input:checkbox[name="seen"]:hidden').show();
+            })
+            .fail(function() {
+                $('.fa-spin').remove();
+                chk = $('input:checkbox[name="seen"]:hidden');
+                chk.show().prop('checked', chk.is(':checked') ? null:'checked').parents('tr').toggleClass('warning');
+                alert('{{ trans('back/blog.fail') }}');
+            });
+        });
         </script>
 
         @yield('scripts')
