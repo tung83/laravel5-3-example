@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Repositories\MenuRepository;
 use App\Repositories\ServiceCategoryRepository;
 use App\Repositories\ProjectCategoryRepository;
+use App\Repositories\ProjectRepository;
 use App\Models\Menu;
 use App\Models\ServiceCategory;
 use Carbon\Carbon;
@@ -22,14 +23,17 @@ class HomeController extends Controller
     protected $menuRepository;
     protected $serviceCategoryRepository;
     protected $projectCategoryRepository;
+    protected $projectRepository;
     
     public function __construct(MenuRepository $menuRepository
             , ServiceCategoryRepository $serviceCategoryRepository
-            , ProjectCategoryRepository $projectCategoryRepository)
+            , ProjectCategoryRepository $projectCategoryRepository
+            , ProjectRepository $projectRepository)
     {
         $this->menuRepository = $menuRepository;
         $this->serviceCategoryRepository = $serviceCategoryRepository;
         $this->projectCategoryRepository = $projectCategoryRepository;
+        $this->projectRepository = $projectRepository;
     }
     
     /**
