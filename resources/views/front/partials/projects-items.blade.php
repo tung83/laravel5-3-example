@@ -14,10 +14,10 @@
         </ul
     </div>
     <div class="clear"/>
-    <div class='project-leftside'>
+    <div class='service-leftside'>
 
     </div>
-    <div class='project-rightside'>
-<!--        @include('front.partials.project-items',['projects' => $projects])-->
+    <div class='service-rightside'>
+        @include('front.partials.project-items')
     </div>
 </div>

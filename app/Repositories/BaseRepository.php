@@ -32,6 +32,17 @@ abstract class BaseRepository
     {
         return $this->model->findOrFail($id);
     }
+
+    /**
+     * Get Model by id.
+     *
+     * @param  int  $id
+     * @return \App\Models\Model
+     */
+    public function getByPid($pId)
+    {
+        return $this->model->where('pId', $pId)->get();;
+    }
     
     public function getAll()
     {
