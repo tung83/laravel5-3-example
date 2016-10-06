@@ -18,6 +18,6 @@
 
     </div>
     <div class='project-rightside'>
-<!--        @include('front.partials.project-items',['projects' => $projects])-->
+        @include('front.partials.project-items',['projects' => $projects])
     </div>
 </div>
