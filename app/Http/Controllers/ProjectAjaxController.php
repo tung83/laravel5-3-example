@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\ProjectRepository;
+use App\Repositories\ProjectCategoryRepository;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -21,9 +22,11 @@ class ProjectAjaxController extends Controller
      * @param  \App\Repositories\ProjectRepository $projectCategoryRepository
      * @return void
      */
-    public function __construct(ProjectRepository $projectRepository)
+    public function __construct(ProjectRepository $projectRepository
+            , ProjectCategoryRepository $projectCategoryRepository)
     {
         $this->projectRepository = $projectRepository;
+        $this->projectCategoryRepository = $projectCategoryRepository;
         $this->middleware('ajax');
     }
 
@@ -34,19 +37,17 @@ class ProjectAjaxController extends Controller
      * @param  \App\Models\Project $projectCategory
      * @return \Illuminate\Http\Response
      */
-    public function partialCategoryData()
+    public function partialCategoryData(Request $request)
     {       
-        $term = Input::get('pId', 1);
-
-        $this->projectRepository = $projectRepository;
-        $projects = $this->projectRepository->paginate(2);
-        $view = view('front.partials.project-items', compact('$projects'));
-        return $view->render();
+        $pid = $request->input('pId');
+        $projectCategory = $this->projectCategoryRepository->getById($pid);
+        $projects = $this->projectRepository->paginateByPid($pid, 6);
+        return view('front.partials.project-category', ['projects' => $projects, 'projectCategory' => $projectCategory])->render();        
     }
-    public function partialData()
+    public function partialData(Request $request)
     {       
-        //$pid = Input::get('pId', 1);
-        $projects = $this->projectRepository->paginateByPid(1, 6);
+        $pid = $request->input('pId');
+        $projects = $this->projectRepository->paginateByPid($pid, 6);
 	return view('front.partials.project-items',['projects' => $projects])->render();
     }
     

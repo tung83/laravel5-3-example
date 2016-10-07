@@ -257,7 +257,7 @@
         $(document).on('click','#project-category .list-inline a', function(e){
                 e.preventDefault();
                 var id = $(this).attr('href').split('-p')[1];
-                 getProjectCategory(id);
+                getProjectCategory(id);
         });
 
         function getProjectCategory(id){
@@ -265,7 +265,7 @@
                     url: '{{ url('/ajax/projectCategory') }}' + '?pId=' + id,
                     type: 'GET'
                 }).done(function(data){
-                        $('.project-category-content').html(data);
+                        $('#project-category-content').html(data);
                 })
                 .fail(function() {                            
                 });

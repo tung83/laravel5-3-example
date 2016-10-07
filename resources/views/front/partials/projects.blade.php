@@ -5,10 +5,10 @@
         </div>
         <div id="project-category" class="row text-center ">
             <ul class="list-inline list-inline-sm">
-                @foreach($projectCategories as $projectCategory) 
+                @foreach($projectCategories as $index => $projectCategory) 
                 <li>
-                    <a href="{{ url(getCategorySlugLink('project', $projectCategory)) }}">
-                        {{languageTransform($projectCategory, 'title')}}  
+                    <a href="{{ url(getCategorySlugLink('project', $projectCategory)) }}"
+                       {{languageTransform($projectCategory, 'title')}}  
                     </a>
                 </li>
                 @endforeach
