@@ -14,10 +14,12 @@
         </ul
     </div>
     <div class="clear"/>
-    <div class='project-leftside'>
+    <div class="row">
+    <div id='project-leftside'class="col-md-4">
 
     </div>
-    <div class='project-rightside'>
-        @include('front.partials.project-items',['projects' => $projects])
+        <div id='project-rightside' class="col-md-8">
+            @include('front.partials.project-items',['projects' => $projects])
+        </div>
     </div>
 </div>

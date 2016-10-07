@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\ProjectCategoryRepository;
+use App\Repositories\ProjectRepository;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -13,7 +13,7 @@ class ProjectAjaxController extends Controller
      *
      * @var \App\Repositories\ProjectRepository
      */
-    protected $projectCategoryRepository;
+    protected $projectRepository;
 
     /**
      * Create a new ProjectAjaxController instance.
@@ -21,9 +21,9 @@ class ProjectAjaxController extends Controller
      * @param  \App\Repositories\ProjectRepository $projectCategoryRepository
      * @return void
      */
-    public function __construct(ProjectCategoryRepository $projectCategoryRepository)
+    public function __construct(ProjectRepository $projectRepository)
     {
-        $this->projectCategoryRepository = $projectCategoryRepository;
+        $this->projectRepository = $projectRepository;
         $this->middleware('ajax');
     }
 
@@ -34,10 +34,10 @@ class ProjectAjaxController extends Controller
      * @param  \App\Models\Project $projectCategory
      * @return \Illuminate\Http\Response
      */
-    public function partialCategory($projectCategory)
-    {
-        $projectCategories = $this->projectCategoryRepository->getActive(3);
-        $view = view('front.partials.projects', compact('projectCategories'));
+    public function partialCategory( Request $request, $projectCategory)
+    {       
+        $projects = $this->projectRepository->paginate(2);
+        $view = view('front.partials.project-items', compact('$projects'));
         return $view->render();
     }
 

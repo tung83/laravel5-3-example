@@ -44,6 +44,16 @@ abstract class BaseRepository
         return $this->model->where('pId', $pId)->get();;
     }
     
+    public function paginateByPid($pId, $pageSize)
+    {
+        return $this->model->where('pId', $pId)->paginate($pageSize);
+    }
+    
+    public function paginate($pageSize)
+    {
+        return $this->model->paginate($pageSize);
+    }
+    
     public function getAll()
     {
         return $this->model->all();

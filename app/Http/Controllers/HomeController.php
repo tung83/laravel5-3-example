@@ -48,7 +48,8 @@ class HomeController extends Controller
         $menus = $this->menuRepository->getActive();
         $services = $this->serviceCategoryRepository->getActive(10);
         $projectCategories = $this->projectCategoryRepository->getActive(3);
-        $projects = $this->projectRepository->getByPid($projectCategories[0]->id);
+        $firstCategoryId = $projectCategories[0]->id;
+        $projects = $this->projectRepository->paginateByPid($firstCategoryId, 2);
         return view('front.index', compact('menus', 'services', 'projectCategories','projects'));
     }
 }

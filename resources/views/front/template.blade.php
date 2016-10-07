@@ -254,6 +254,50 @@
                 alert('{{ trans('back/blog.fail') }}');
             });
         });
+        
+        /*==================== PAGINATION =========================*/
+
+
+
+		$(window).on('hashchange',function(){
+
+			page = window.location.hash.replace('#','');
+
+			getProducts(page);
+
+		});
+
+
+
+		$(document).on('click','.pagination a', function(e){
+
+			e.preventDefault();
+
+			var page = $(this).attr('href').split('page=')[1];
+
+			 getProducts(page);
+
+			//location.hash = page;
+
+		});
+
+
+
+		function getProducts(page){
+
+
+
+			$.ajax({
+
+				url: window.location + 'ajax/product?page=' + page
+
+			}).done(function(data){
+
+				$('#rightside').html(data);
+
+			});
+
+		}
         </script>
 
         @yield('scripts')
