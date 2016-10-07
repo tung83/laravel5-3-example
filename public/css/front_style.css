@@ -13,6 +13,9 @@ html, body {
 body {
   font-family: Arial,sans-serif;}
 
+    .slick a:hover, .slick a:focus, .project a:hover, .project a:focus {
+        text-decoration: none; 
+    }
     #header-right-bottom{
         font-family: 'Open Sans Condensed', sans-serif;
         font-size: 18px;
@@ -189,8 +192,7 @@ body {
         text-transform: uppercase;
         font-weight: bold;
     }
-    .slick a.slick-slide:hover, .slick a.slick-slide:focus {
-        text-decoration: none; 
+    .slick a:hover, .slick a:focus {
         color: #ddd;      
     }
     .service-sum {
@@ -238,9 +240,36 @@ body {
             background-color: #fff;
         }
     .project h2.title {
-    padding: 0 60px 5px 60px;
-    border-bottom: 4px solid #ff0000;
-    display: inline-block;
+        padding: 0 60px 5px 60px;
+        border-bottom: 4px solid #ff0000;
+        display: inline-block;
+    }
+    .project{
+        padding-top: 10px;
+        padding-bottom: 10px;        
+    }
+    #project-list{
+        margin-bottom: 20px;
+    }
+    #project-category > ul{
+        margin-bottom: 45px;
+    }
+    #project-leftside{
+        margin-top: 50px;
+    }
+    #project-leftside p{
+        margin-bottom: 90px;
+    }
+    #project-rightside img{
+        width: 195px;
+        height: 224px;
+    }
+    
+@media (min-width: 992px){      
+    #project-items-rightside{
+        display: inline-block;
+        height: 568px;
+    }
 }
         
 @media (max-width: 767px){
@@ -272,9 +301,15 @@ body {
         height: 120px;
     }
     
-    body > .container{
-        width: 1230px;
-        padding: 0;
+    .container{
+        width: 1260px;
+    }
+    .container{
+        
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
     }
     #header-bottom{
         position: absolute;
@@ -315,7 +350,7 @@ body {
         height: 11px;
         display: none;
         -webkit-transform: rotate(42.7deg) translate(-50%);
-        transform: rotate(42.7deg) translate(-50%);
+        transform: rotate(47deg) translate(-35%);
         top: 100%;
         left: 50%;
         z-index: 1;
@@ -324,13 +359,13 @@ body {
         border-right-color: #ca0000;
         border-bottom-color: #ca0000;
         margin-top: -2px;
+        transition: .1s;
     }
     .list-inline li a:before, .list-inline li a:after {
         content: '';
         position: absolute;
         display: block;
         opacity: 0;
-        transition: .1s;
     }
     .list-inline li a:after {
         background: #ca0000;
@@ -340,14 +375,6 @@ body {
         left: 50%;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
-    }
-
-    .list-inline li a:before, .list-inline li a:after {
-        content: '';
-        position: absolute;
-        display: block;
-        opacity: 0;
-        transition: .1s;
     }
     .list-inline li a.active:before, .list-inline li a.active:after, .list-inline li a:hover:before, .list-inline li a:hover:after {
         opacity: 1;

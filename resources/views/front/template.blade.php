@@ -167,12 +167,12 @@
         {!! HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') !!}
         {!! HTML::script('js/slick.js') !!}
         <script>
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
             $(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 $('#logout').click(function(e) {
                     e.preventDefault();
                     $('#logout-form').submit();
@@ -235,69 +235,43 @@
               );
         });
         
-         $(document).on('change', ':checkbox[name="seen"]', function() {
-            $(this).parents('tr').toggleClass('warning');
-            $(this).hide().parent().append('<i class="fa fa-refresh fa-spin"></i>');
-            $.ajax({
-                url: '{{ url('postseen') }}' + '/' + this.value,
-                type: 'GET',
-                data: "seen=" + this.checked
-            })
-            .done(function() {
-                $('.fa-spin').remove();
-                $('input:checkbox[name="seen"]:hidden').show();
-            })
-            .fail(function() {
-                $('.fa-spin').remove();
-                chk = $('input:checkbox[name="seen"]:hidden');
-                chk.show().prop('checked', chk.is(':checked') ? null:'checked').parents('tr').toggleClass('warning');
-                alert('{{ trans('back/blog.fail') }}');
-            });
-        });
-        
         /*==================== PAGINATION =========================*/
+        $(document).on('click','#project-rightside .pagination a', function(e){
+                e.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                var id = $(this).attr('href').split('-p')[1];
+                 getProjects(id, page);
+        });
 
+        function getProjects(id, page){
+                $.ajax({
+                    url: '{{ url('/ajax/project') }}' + '?pId=' + id + '&page=' + page,
+                    type: 'GET'
+                }).done(function(data){
+                        $('#project-rightside').html(data);
+                })
+                .fail(function() {                            
+                });
+        }
+        
+        $(document).on('click','#project-category .list-inline a', function(e){
+                e.preventDefault();
+                var id = $(this).attr('href').split('-p')[1];
+                 getProjectCategory(id);
+        });
 
-
-		$(window).on('hashchange',function(){
-
-			page = window.location.hash.replace('#','');
-
-			getProducts(page);
-
-		});
-
-
-
-		$(document).on('click','.pagination a', function(e){
-
-			e.preventDefault();
-
-			var page = $(this).attr('href').split('page=')[1];
-
-			 getProducts(page);
-
-			//location.hash = page;
-
-		});
-
-
-
-		function getProducts(page){
-
-
-
-			$.ajax({
-
-				url: window.location + 'ajax/product?page=' + page
-
-			}).done(function(data){
-
-				$('#rightside').html(data);
-
-			});
-
-		}
+        function getProjectCategory(id){
+                $.ajax({
+                    url: '{{ url('/ajax/projectCategory') }}' + '?pId=' + id,
+                    type: 'GET'
+                }).done(function(data){
+                        $('.project-category-content').html(data);
+                })
+                .fail(function() {                            
+                });
+        }
+                
+                
         </script>
 
         @yield('scripts')

@@ -70,5 +70,14 @@ if (!function_exists('getCategorySlugLink')) {
     }
 }
 
+if (!function_exists('getItemSlugLink')) {
+    function getItemSlugLink($menuName, $item)
+    {
+        $title_link = languageTransform($item, 'title');
+        $menu_link = trans('front/site.'. $menuName);
+        return $link_to_service = '/' . $menu_link . '/' . str_slug($title_link) .'-i' . strval($item->id);
+    }
+}
+
 
 

@@ -11,6 +11,7 @@ use App\Repositories\ProjectRepository;
 use App\Models\Menu;
 use App\Models\ServiceCategory;
 use Carbon\Carbon;
+use App\Models\Project;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 
 class HomeController extends Controller
@@ -48,8 +49,10 @@ class HomeController extends Controller
         $menus = $this->menuRepository->getActive();
         $services = $this->serviceCategoryRepository->getActive(10);
         $projectCategories = $this->projectCategoryRepository->getActive(3);
-        $firstCategoryId = $projectCategories[0]->id;
-        $projects = $this->projectRepository->paginateByPid($firstCategoryId, 2);
+        $firstCategoryId = $projectCategories[0]->id;       
+        $projects = $this->projectRepository->paginateByPid($firstCategoryId, 6);
+        $customUrl = url(getCategorySlugLink('project', $projectCategories[0]));
+        $projects->setPath($customUrl);
         return view('front.index', compact('menus', 'services', 'projectCategories','projects'));
     }
 }

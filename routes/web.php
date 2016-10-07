@@ -19,6 +19,11 @@ Route::get('project/{projectCategory}', 'ProjectAjaxController@partialCategory')
 Route::get('du-an', 'ProjectController');
 Route::get('du-an/{projectCategory}', 'ProjectController');
 
+Route::get('/ajax/project','ProjectAjaxController@partialData');
+Route::get('/ajax/projectCategory','ProjectAjaxController@partialCategoryData');
+
+
+
 // Admin
 Route::get('admin', 'AdminController')->name('admin');
 

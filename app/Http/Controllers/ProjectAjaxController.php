@@ -34,12 +34,27 @@ class ProjectAjaxController extends Controller
      * @param  \App\Models\Project $projectCategory
      * @return \Illuminate\Http\Response
      */
-    public function partialCategory( Request $request, $projectCategory)
+    public function partialCategoryData()
     {       
+        $term = Input::get('pId', 1);
+
+        $this->projectRepository = $projectRepository;
         $projects = $this->projectRepository->paginate(2);
         $view = view('front.partials.project-items', compact('$projects'));
         return $view->render();
     }
+    public function partialData()
+    {       
+        //$pid = Input::get('pId', 1);
+        $projects = $this->projectRepository->paginateByPid(1, 6);
+	return view('front.partials.project-items',['projects' => $projects])->render();
+    }
+    
+    
+     public function index(){
+      $msg = "This is a simple message.";
+      return response()->json(array('msg'=> $msg), 200);
+   }
 
     /**
      * Validate an projectCategory for comments
