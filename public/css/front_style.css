@@ -13,7 +13,8 @@ html, body {
 body {
   font-family: Arial,sans-serif;}
 
-    .slick a:hover, .slick a:focus, .project a:hover, .project a:focus {
+    .slick a:hover, .slick a:focus, .project a:hover, .project a:focus
+    , .faqs a:hover, .faqs a:focus{
         text-decoration: none; 
     }
     #header-right-bottom{
@@ -275,6 +276,9 @@ body {
 }
 
 /*News home page*/
+.news{
+    padding-bottom: 70px;
+}
 #news-list {
     background-image: url("../img/news-banner.png");
     background-position: 50% 100%;
@@ -297,6 +301,89 @@ body {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
+
+
+/*Faqs home page*/
+.faqs{
+    background-image: url("../img/faq-bg.png");
+    background-position: 20% 100%;
+    min-height: 595px;
+    padding: 10px 0 10px 10px;
+}
+.faqs a {
+    background-image: url("../img/faq-sticky-note.png");
+    width: 219px;
+    height: 168px;
+    display: inline-block;
+    padding: 40px 15px 10px 15px;
+    
+}
+
+@media (min-width: 992px){  
+    .faqs .faq-1 {
+        padding-top: 25px;
+    }
+    .faqs .faq-2 {
+        padding-top: 50px;
+    }
+    .faqs{
+    padding: 90px 0 70px 10px;
+    }
+}
+
+/*recruit home page*/
+.recruit{
+    background: #fff url("../img/recruit-bg.png") no-repeat 0 100%;
+    min-height: 560px;
+    padding: 10px 0 10px 10px;
+}
+.recruit .recruit-item {
+    background-image: url("../img/recruit-item.png");
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 30px 0 0 85px;    
+    list-style-type: none;
+    height: 80px;    
+    position: relative;
+}
+.recruit .recruit-item:before{
+    position: absolute;
+    top: 30px;
+    left: 36px;
+}
+.recruit .recruit-item.item1:before{
+    content: "1";
+}
+.recruit .recruit-item.item2:before{
+    content: "2";
+}
+.recruit .recruit-item.item3:before{
+    content: "3";
+}
+@media (min-width: 992px){   
+    .recruit .recruit-item.item2{
+        margin-left: 60px;
+    }
+    .recruit .recruit-item.item3{
+        margin-left: 120px;
+    } 
+    .recruit ol{
+        float: right;
+        width: 485px;
+        margin-top: 160px;
+    }
+    
+}
+
+
+/*customer home page*/
+.customer{
+    background: #fff url("../img/customer-bg.png") no-repeat 0 100%;
+    min-height: 555px;
+    padding: 10px 0 10px 10px;
+}
+
+
 @media (max-width: 767px){
     .navbar {
         width: 100%;

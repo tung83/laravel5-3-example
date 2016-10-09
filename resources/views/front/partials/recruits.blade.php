@@ -1,11 +1,11 @@
 <div class="recruit row">
-    <div class="col-md-9"
-        @foreach($recruits as $recruit) 
-            <div class="col-md-4">
+    <ol>
+        @foreach($recruits as $index => $recruit) 
+            <li class="recruit-item item{{$index+1}}">
                 <a href="{{ url(getCategorySlugLink('recruit', $recruit)) }}">
                    {{languageTransform($recruit, 'title')}}  
                 </a>
-            </div>
+            </li>
         @endforeach        
-    </div>
+    </ol>
 </div>

@@ -35,6 +35,8 @@ class News extends Model
     ];
 
     protected $guarded = [];
+    
+    protected $dateFormat = 'd/m/Y';
 
         
 }

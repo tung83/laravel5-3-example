@@ -1,4 +1,4 @@
-<div class="customers row">
+<div class="customer row">
     <div class="col-md-9"
         @foreach($customers as $customer) 
             <div class="col-md-4">

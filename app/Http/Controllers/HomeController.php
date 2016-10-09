@@ -11,6 +11,7 @@ use App\Repositories\ProjectCategoryRepository;
 use App\Repositories\ProjectRepository;
 use App\Repositories\NewsCategoryRepository;
 use App\Repositories\NewsRepository;
+use App\Repositories\QtextRepository;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 
 class HomeController extends Controller
@@ -24,6 +25,7 @@ class HomeController extends Controller
     protected $projectRepository;
     protected $newsCategoryRepository;
     protected $newsRepository;
+    protected $qtextRepository;
     
     public function __construct(MenuRepository $menuRepository
             ,CustomerRepository $customerRepository
@@ -33,7 +35,8 @@ class HomeController extends Controller
             , ProjectCategoryRepository $projectCategoryRepository
             , ProjectRepository $projectRepository
             , NewsCategoryRepository $newsCategoryRepository
-            , NewsRepository $newsRepository)
+            , NewsRepository $newsRepository
+            , QtextRepository $qtextRepository)
     {
         $this->menuRepository = $menuRepository;
         $this->customerRepository = $menuRepository;
@@ -44,6 +47,7 @@ class HomeController extends Controller
         $this->projectRepository = $projectRepository;
         $this->newsCategoryRepository = $newsCategoryRepository;
         $this->newsRepository = $newsRepository;
+        $this->qtextRepository = $qtextRepository;
     }
     
     /**
@@ -65,8 +69,9 @@ class HomeController extends Controller
         $customers = $this->menuRepository->getActive(20);
         $faqs = $this->menuRepository->getActive(6);
         $recruits = $this->menuRepository->getActive(3);
+        $qtextRecruit = $this->qtextRepository->getRecruit();
 	
         return view('front.index', compact('menus', 'services'
-                , 'projectCategories','projects', 'newsCategories','news', 'customers', 'faqs', 'recruits'));
+                , 'projectCategories','projects', 'newsCategories','news', 'customers', 'faqs', 'recruits','qtextRecruit'));
     }
 }
