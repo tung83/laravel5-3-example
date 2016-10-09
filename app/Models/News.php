@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use \DateTime;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -37,6 +38,10 @@ class News extends Model
     protected $guarded = [];
     
     protected $dateFormat = 'd/m/Y';
+    
+    public function getPostedDate(){
+       return $this->posted_datetime != '0000-00-00 00:00:00' ? $this->posted_datetime : new DateTime();
+}
 
         
 }
