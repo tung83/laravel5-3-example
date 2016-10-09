@@ -8,15 +8,17 @@
                 @foreach($projectCategories as $index => $projectCategory) 
                 <li>
                     <a href="{{ url(getCategorySlugLink('project', $projectCategory)) }}"
+                       class="{{ $index ==  0 ? 'active' : ''  }}">
                        {{languageTransform($projectCategory, 'title')}}  
                     </a>
                 </li>
                 @endforeach
-            </ul
+            </ul>
         </div>
-        <div class="clear"/>
+        <div class="clear">
+        </div>
         <div id="project-category-content" class="container">
             @include('front.partials.project-category',['projectCategory' => $projectCategories[0],'projects' => $projects])   
-        <div>
+        </div>
     </div>
 </div>

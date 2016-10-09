@@ -236,34 +236,36 @@ body {
         .service-ico.global {
           background-position: -428px 0;
         }
-        .project{
-            background-color: #fff;
-        }
-    .project h2.title {
-        padding: 0 60px 5px 60px;
-        border-bottom: 4px solid #ff0000;
-        display: inline-block;
-    }
-    .project{
-        padding-top: 10px;
-        padding-bottom: 10px;        
-    }
-    #project-list{
-        margin-bottom: 20px;
-    }
-    #project-category > ul{
-        margin-bottom: 45px;
-    }
-    #project-leftside{
-        margin-top: 50px;
-    }
-    #project-leftside p{
-        margin-bottom: 90px;
-    }
-    #project-rightside img{
-        width: 195px;
-        height: 224px;
-    }
+
+/*Projects home page*/
+.news, .project{
+    background-color: #fff;
+}
+.news h2.title, .project h2.title {
+    padding: 0 60px 5px 60px;
+    border-bottom: 3px solid #ff0000;
+    display: inline-block;
+}
+.project{
+    padding-top: 10px;    
+    
+}
+#project-list{
+    margin-bottom: 20px;
+}
+#project-category > ul{
+    margin-bottom: 45px;
+}
+#project-leftside{
+    margin-top: 50px;
+}
+#project-leftside p{
+    margin-bottom: 90px;
+}
+#project-rightside img{
+    width: 195px;
+    height: 224px;
+}
     
 @media (min-width: 992px){      
     #project-items-rightside{
@@ -271,7 +273,30 @@ body {
         height: 568px;
     }
 }
-        
+
+/*News home page*/
+#news-list {
+    background-image: url("../img/news-banner.png");
+    background-position: 50% 100%;
+    min-height: 158px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.news h2.title{
+    padding: 40px 20px 5px 20px;
+}
+.news #news-leftside .sum {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
 @media (max-width: 767px){
     .navbar {
         width: 100%;
@@ -334,7 +359,7 @@ body {
     }
     .list-inline li a {
         color: #000;
-        font-size: 25px;
+        font-size: 14px;
         line-height: 1;
         cursor: pointer;
         padding: 3px 6px 25px;

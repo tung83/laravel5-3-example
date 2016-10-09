@@ -79,5 +79,24 @@ if (!function_exists('getItemSlugLink')) {
     }
 }
 
+if (!function_exists('getPaginateByPidData')) {
+    function getPaginateByPidData($pName, $pListData, $repository, $pageSize, $requestHasPid = null )
+    {
+        $pid = null;
+        if($requestHasPid){
+            $pid = $requestHasPid->input('pId');
+        }
+        else {            
+            $pid = $pListData[0]->id;                 
+        }
+        $paginateData = $repository->paginateByPid($pid, $pageSize);
+        $customUrl = url(getCategorySlugLink($pName, $pListData[0]));
+        $paginateData->setPath($customUrl);
+        return $paginateData;    
+    }
+}
+
+
+
 
 

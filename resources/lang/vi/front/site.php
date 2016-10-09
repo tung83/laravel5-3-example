@@ -18,5 +18,6 @@ return [
     'no' => 'Non',
     'service' => 'dich-vu',    
     'projects' => 'DỰ ÁN',
-    'project' => 'du-an'
+    'project' => 'du-an',
+    'news-title' => 'Tin tức'
 ];

@@ -21,6 +21,8 @@ Route::get('du-an/{projectCategory}', 'ProjectController');
 
 Route::get('/ajax/project','ProjectAjaxController@partialData');
 Route::get('/ajax/projectCategory','ProjectAjaxController@partialCategoryData');
+Route::get('/ajax/news','NewsAjaxController@partialData');
+Route::get('/ajax/newsCategory','NewsAjaxController@partialCategoryData');
 
 
 

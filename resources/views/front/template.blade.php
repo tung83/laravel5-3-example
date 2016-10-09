@@ -255,7 +255,9 @@
         }
         
         $(document).on('click','#project-category .list-inline a', function(e){
-                e.preventDefault();
+                e.preventDefault();                
+                $('#project-category .list-inline a').removeClass('active');
+                $(this).addClass('active');
                 var id = $(this).attr('href').split('-p')[1];
                 getProjectCategory(id);
         });
@@ -266,6 +268,45 @@
                     type: 'GET'
                 }).done(function(data){
                         $('#project-category-content').html(data);
+                })
+                .fail(function() {                            
+                });
+        }
+        
+        
+        /*==================== PAGINATION =========================*/
+        $(document).on('click','#news-rightside .pagination a', function(e){
+                e.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                var id = $(this).attr('href').split('-p')[1];
+                 getNews(id, page);
+        });
+
+        function getNews(id, page){
+                $.ajax({
+                    url: '{{ url('/ajax/news') }}' + '?pId=' + id + '&page=' + page,
+                    type: 'GET'
+                }).done(function(data){
+                        $('#news-rightside').html(data);
+                })
+                .fail(function() {                            
+                });
+        }
+        
+        $(document).on('click','#news-category .list-inline a', function(e){
+                e.preventDefault();                
+                $('#news-category .list-inline a').removeClass('active');
+                $(this).addClass('active');
+                var id = $(this).attr('href').split('-p')[1];
+                getNewsCategory(id);
+        });
+
+        function getNewsCategory(id){
+                $.ajax({
+                    url: '{{ url('/ajax/newsCategory') }}' + '?pId=' + id,
+                    type: 'GET'
+                }).done(function(data){
+                        $('#news-category-content').html(data);
                 })
                 .fail(function() {                            
                 });
