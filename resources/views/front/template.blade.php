@@ -172,8 +172,10 @@
         /*==================== PAGINATION =========================*/
         $(document).on('click','#project-rightside .pagination a', function(e){
                 e.preventDefault();
-                var page = $(this).attr('href').split('page=')[1];
-                var id = $(this).attr('href').split('-p')[1];
+                var valuesPart = $(this).attr('href').split('-p')[1];
+                var values = valuesPart.split('?page=');
+                var id = values[0];
+                var page = values[1];
                  getProjects(id, page);
         });
 
