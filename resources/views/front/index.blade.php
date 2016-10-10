@@ -1,4 +1,4 @@
-@extends('front.template', ['menus' => $menus])
+@extends('front.template', ['menus' => $menus, 'services' => $services])
 @section('main')
     @include('front.partials.services', ['services' => $services])
     @include('front.partials.projects', ['projectCategories' => $projectCategories, 'projects'=> $projects])

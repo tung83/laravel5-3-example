@@ -93,74 +93,8 @@
             @yield('main')
         </main>
 
-        <footer>
-            @yield('footer')
-                <div class="row footer-details clearfix">
-                    <div id="footer-company-info" class="col-sm-3">                
-                        <div id="company-info">
-                            <img alt="" src="" style="height: 52px; width: 177px">                           
-                        </div>
-                    <hr>
-                        <div id="address-details" style="color: #bababa">
-                            <p class="location">Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.</p>
-                            <p class="phone">Phone: <strong>3-512-8400</strong> ( 3 lines )</p>
-                            <p class="hotline">Hotline: 0123.456.7898</p>
-                            <p class="fax">Fax:&nbsp;<span style="line-height: 20.8px">3-512-8400</span></p>
-                            <p class="mst">MST: 123456789</p>
-                            <p class="email">Email: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>
-                            <p class="website">Website: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>
-                        </div>       
-                    </div>
-                    <div id="google-map" class="col-sm-3">      
-                        {!! Mapper::render() !!} 
-                     </div>                                 
-                    <div id="footer-introduction" class="col-sm-3 pull-right">
-                        <img alt="" src="" style="height: 52px; width: 177px">    
-                        <p class="readmore">gioi thieu</p>
-                    </div>                              
-                    <div id="footer-services" class="col-sm-3">
-                        <ul id="footer-social-items">
-                            <li>
-                                <a class="footer-facebook"></a>
-                            </li>
-                            <li>
-                                <a class="footer-tweeter"></a>
-                            </li>
-                            <li>
-                                <a class="footer-skype"></a>
-                            </li>
-                            <li>
-                                <a class="footer-goole-plus"></a>
-                            </li>
-                        </ul>
-                        <ul id="footer-services">
-                            <li class="clearfix">
-                                <a href="/trang-chu">Home</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/gioi-thieu">Giới Thiệu</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/tin-tuc">Tin Tức</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/dich-vu">Dịch Vụ</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/hoi-dap">Hỏi Đáp</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/download">Download</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/lien-he">Liên Hệ</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="copyright text-center">
-                        Copyright © 2016 <a>PS Media</a>. All rights reserved
-                </div>
+        <footer class="container">            
+            @include('front.footer', ['services' => $services])               
         </footer>
 
         {!! HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js') !!}

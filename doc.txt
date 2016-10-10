@@ -119,6 +119,7 @@ ALTER TABLE `service_category`
 
 CREATE TABLE `qtext` (
   `id` int(11) NOT NULL,
+  `key` text NOT NULL,
   `title` text NOT NULL,
   `e_title` text NOT NULL,
   `content` longtext NOT NULL,
@@ -129,13 +130,11 @@ CREATE TABLE `qtext` (
 -- Dumping data for table `qtext`
 --
 
-INSERT INTO `qtext` (`id`, `title`, `e_title`, `content`, `e_content`) VALUES
-(1, 'Chữ chạy', 'Email', '<span style="color:#FF0000"><strong>Chuyên cung cấp sỉ lẻ áo quần các loại...</strong></span>', ''),
-(2, 'Hotline', '', '0988 33 1737', ''),
-(3, 'Liên hệ', '', '<strong><img alt="" src="/file/ckfinder/userfiles/images/logo.png" /><br />\r\nCÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ&nbsp;</strong><br />\r\n<strong>EMSVN ( EMSVN J.S.C )</strong>\r\n<hr />Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.<br />\r\nPhone: 3-512-8400 ( 3 lines )<br />\r\nHotline: 0123.456.7898<br />\r\nFax:&nbsp;3-512-8400<br />\r\nMST: 123456789', ''),
-(4, 'Footer', '', ' <div id="company-info">\r\n            <img alt="" src="/file/ckfinder/userfiles/images/logo.png" style="height: 52px; width: 177px" />        \r\n        <p style="color: #FFF0F5"><strong>\r\n            CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ&nbsp;</strong></p>\r\n        <p style="color: #f3a401"><strong>EMSVN (EMSVN J.S.C)</strong></p>\r\n    </div>\r\n    <hr />\r\n    <div id="address-details" style="color: #bababa">\r\n        <p class="location">Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.</p>\r\n        <p class="phone">Phone: <strong>3-512-8400</strong> ( 3 lines )</p>\r\n        <p class="hotline">Hotline: 0123.456.7898</p>\r\n        <p class="fax">Fax:&nbsp;<span style="line-height: 20.8px" />3-512-8400</p>\r\n        <p class="mst">MST: 123456789</p>\r\n        <p class="email">Email: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>\r\n        <p class="website">Website: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>\r\n    </div>', ''),
-(5, 'Header Text', '', 'Hotline', ''),
-(6, 'Tuyển dụng', '', 'Tỉnh Long An cho rằng văn bản yêu cầu các sở, ngành "bảo mật thông tin" dự án Khu công nghệ môi trường xanh đã gây hiểu nhầm về', '');
+INSERT INTO `qtext` (`id`,`key`, `title`, `e_title`, `content`, `e_content`) VALUES
+(1,'contact', 'Liên hệ', '', '<strong><img alt="" src="/file/ckfinder/userfiles/images/logo.png" /><br />\r\nCÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ&nbsp;</strong><br />\r\n<strong>EMSVN ( EMSVN J.S.C )</strong>\r\n<hr />Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.<br />\r\nPhone: 3-512-8400 ( 3 lines )<br />\r\nHotline: 0123.456.7898<br />\r\nFax:&nbsp;3-512-8400<br />\r\nMST: 123456789', ''),
+(2,'footer', 'Footer', '', ' <div id="company-info">\r\n            <img alt="" src="/file/ckfinder/userfiles/images/logo.png" style="height: 52px; width: 177px" />        \r\n        <p style="color: #FFF0F5"><strong>\r\n            CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ&nbsp;</strong></p>\r\n        <p style="color: #f3a401"><strong>EMSVN (EMSVN J.S.C)</strong></p>\r\n    </div>\r\n    <hr />\r\n    <div id="address-details" style="color: #bababa">\r\n        <p class="location">Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.</p>\r\n        <p class="phone">Phone: <strong>3-512-8400</strong> ( 3 lines )</p>\r\n        <p class="hotline">Hotline: 0123.456.7898</p>\r\n        <p class="fax">Fax:&nbsp;<span style="line-height: 20.8px" />3-512-8400</p>\r\n        <p class="mst">MST: 123456789</p>\r\n        <p class="email">Email: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>\r\n        <p class="website">Website: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>\r\n    </div>', ''),
+(3,'header', 'Header Text', '', 'Hotline', ''),
+(4, 'recruit', 'Tuyển dụng', '', 'Tỉnh Long An cho rằng văn bản yêu cầu các sở, ngành "bảo mật thông tin" dự án Khu công nghệ môi trường xanh đã gây hiểu nhầm về', '');
 --
 -- Indexes for dumped tables
 --
@@ -154,7 +153,7 @@ ALTER TABLE `qtext`
 -- AUTO_INCREMENT for table `qtext`
 --
 ALTER TABLE `qtext`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 
 --

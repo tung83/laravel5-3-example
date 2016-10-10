@@ -291,6 +291,10 @@ body {
 
 .news h2.title{
     padding: 40px 20px 5px 20px;
+    font-weight: 700;
+}
+.news #news-category{
+    margin: 35px 0 60px 0;
 }
 .news #news-leftside .sum {
     position: absolute;
@@ -383,7 +387,84 @@ body {
     padding: 10px 0 10px 10px;
 }
 
+/*customer home page*/
+footer #footer-introduction a{
+    text-align: right;
+    display: inline-block;
+}
+footer #footer-introduction a{
+    text-decoration: none;
+}
 
+footer ul#footer-social-items{
+    list-style: none;
+    display: block;
+    line-height: 0;
+    padding: 0;
+    margin-bottom: 0;
+}
+footer ul#footer-social-items li{
+    float: left;
+}
+footer #footer-services{
+        background-image: url('../img/footer-vertical-dot-line.png');
+        background-repeat: repeat-y;
+        background-position: 25px 0;
+        display: inline-block;
+    
+}
+footer ul#footer-services li{
+    list-style-image: url('../img/bullet-service-item.png');    
+}
+footer ul#footer-services li a{
+    line-height: 25px;
+    color: #ff7e00;
+}
+
+footer ul#footer-services li a:active, footer ul#footer-services li a:hover{    
+    color: #ff6400;
+}
+footer ul#footer-services li:first-child{
+    padding-top: 30px;
+}
+    footer #footer-social-items a{
+        background-image: url('../img/social-icons.png');
+        background-repeat: no-repeat;   
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        position: relative;
+        margin: 0 5px 0 5px;
+    }
+        i.service-ico:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #ca0000;
+            opacity: 0;
+       }
+       i.service-ico:hover:before, i.service-ico:hover:after {
+            opacity: 0.2;
+        }
+        footer #footer-social-items a.footer-facebook {
+          background-position: 0 0;
+        }
+        footer #footer-social-items a.footer-tweeter {
+          background-position: -52px 0;
+        }
+        footer #footer-social-items a.footer-skype {
+          background-position: -104px 0;
+        }
+        footer #footer-social-items a.footer-goole-plus {
+          background-position: -156px 0;
+        }
+
+        footer .copyright {
+            background-color: #000;
+        }
 @media (max-width: 767px){
     .navbar {
         width: 100%;

@@ -40,7 +40,7 @@ class News extends Model
     protected $dateFormat = 'd/m/Y';
     
     public function getPostedDate(){
-       return $this->posted_datetime != '0000-00-00 00:00:00' ? $this->posted_datetime : new DateTime();
+       return $this->posted_datetime != '0000-00-00 00:00:00' && $this->posted_datetime != null ? $this->posted_datetime : new DateTime();
 }
 
         
