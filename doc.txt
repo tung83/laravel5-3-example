@@ -117,6 +117,10 @@ ALTER TABLE `service_category`
 
 
 
+--
+-- Table structure for table `qtext`
+--
+
 CREATE TABLE `qtext` (
   `id` int(11) NOT NULL,
   `key` text NOT NULL,
@@ -130,11 +134,12 @@ CREATE TABLE `qtext` (
 -- Dumping data for table `qtext`
 --
 
-INSERT INTO `qtext` (`id`,`key`, `title`, `e_title`, `content`, `e_content`) VALUES
-(1,'contact', 'Liên hệ', '', '<strong><img alt="" src="/file/ckfinder/userfiles/images/logo.png" /><br />\r\nCÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ&nbsp;</strong><br />\r\n<strong>EMSVN ( EMSVN J.S.C )</strong>\r\n<hr />Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.<br />\r\nPhone: 3-512-8400 ( 3 lines )<br />\r\nHotline: 0123.456.7898<br />\r\nFax:&nbsp;3-512-8400<br />\r\nMST: 123456789', ''),
-(2,'footer', 'Footer', '', ' <div id="company-info">\r\n            <img alt="" src="/file/ckfinder/userfiles/images/logo.png" style="height: 52px; width: 177px" />        \r\n        <p style="color: #FFF0F5"><strong>\r\n            CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ&nbsp;</strong></p>\r\n        <p style="color: #f3a401"><strong>EMSVN (EMSVN J.S.C)</strong></p>\r\n    </div>\r\n    <hr />\r\n    <div id="address-details" style="color: #bababa">\r\n        <p class="location">Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.</p>\r\n        <p class="phone">Phone: <strong>3-512-8400</strong> ( 3 lines )</p>\r\n        <p class="hotline">Hotline: 0123.456.7898</p>\r\n        <p class="fax">Fax:&nbsp;<span style="line-height: 20.8px" />3-512-8400</p>\r\n        <p class="mst">MST: 123456789</p>\r\n        <p class="email">Email: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>\r\n        <p class="website">Website: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>\r\n    </div>', ''),
-(3,'header', 'Header Text', '', 'Hotline', ''),
+INSERT INTO `qtext` (`id`, `key`, `title`, `e_title`, `content`, `e_content`) VALUES
+(1, 'contact', 'Liên hệ', '', '<strong><img alt="" src="/file/ckfinder/userfiles/images/logo.png" /><br />\r\nCÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ&nbsp;</strong><br />\r\n<strong>EMSVN ( EMSVN J.S.C )</strong>\r\n<hr />Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.<br />\r\nPhone: 3-512-8400 ( 3 lines )<br />\r\nHotline: 0123.456.7898<br />\r\nFax:&nbsp;3-512-8400<br />\r\nMST: 123456789', ''),
+(2, 'footer', 'Footer', '', ' <div id="company-info">\r\n            <img alt="" src="/file/ckfinder/userfiles/images/logo.png" style="height: 52px; width: 177px" />        \r\n        <p style="color: #FFF0F5"><strong>\r\n            CÔNG TY CỔ PHẦN THƯƠNG MẠI ĐIỆN TỬ&nbsp;</strong></p>\r\n        <p style="color: #f3a401"><strong>EMSVN (EMSVN J.S.C)</strong></p>\r\n    </div>\r\n    <hr />\r\n    <div id="address-details" style="color: #bababa">\r\n        <p class="location">Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.</p>\r\n        <p class="phone">Phone: <strong>3-512-8400</strong> ( 3 lines )</p>\r\n        <p class="hotline">Hotline: 0123.456.7898</p>\r\n        <p class="fax">Fax:&nbsp;<span style="line-height: 20.8px" />3-512-8400</p>\r\n        <p class="mst">MST: 123456789</p>\r\n        <p class="email">Email: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>\r\n        <p class="website">Website: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>\r\n    </div>', ''),
+(3, 'introduction', 'Giới thiệu', 'introduction', 'Các tờ báo, hãng tin Mỹ sử dụng rất nhiều từ ngữ mang tính tiêu cực khi mô tả về cuộc tranh luận lần hai giữa hai ứng viên tổng thống đảng Cộng hòa và Dân chủ.', 'The virus may inevitably find its way up to mosquito-infested northern provinces and cities after recent two non-travel related cases.'),
 (4, 'recruit', 'Tuyển dụng', '', 'Tỉnh Long An cho rằng văn bản yêu cầu các sở, ngành "bảo mật thông tin" dự án Khu công nghệ môi trường xanh đã gây hiểu nhầm về', '');
+
 --
 -- Indexes for dumped tables
 --
@@ -154,6 +159,46 @@ ALTER TABLE `qtext`
 --
 ALTER TABLE `qtext`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+
+--
+-- Table structure for table `basic_config`
+--
+
+CREATE TABLE `basic_config` (
+  `id` int(11) NOT NULL,
+  `key` text NOT NULL,
+  `content` longtext NOT NULL,
+  `e_content` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `basic_config`
+--
+
+INSERT INTO `basic_config` (`id`, `key`, `content`, `e_content`) VALUES
+(1, 'facebook', 'http://tungfacbook.com', ''),
+(2, 'tweeter', 'http://tungfacbook.com', ''),
+(3, 'googleplus', 'http://tungfacbook.com', '');
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `basic_config`
+--
+ALTER TABLE `basic_config`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `basic_config`
+--
+ALTER TABLE `basic_config`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 
 --

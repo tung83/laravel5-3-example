@@ -1,4 +1,6 @@
-@extends('front.template', ['menus' => $menus, 'services' => $services])
+@extends('front.template', ['menus' => $menus, 'services' => $services
+    ,'qtextContact' => $qtextContact, 'qtextIntroduction' => $qtextIntroduction
+    , 'basicConfigs' => $basicConfigs])
 @section('main')
     @include('front.partials.services', ['services' => $services])
     @include('front.partials.projects', ['projectCategories' => $projectCategories, 'projects'=> $projects])

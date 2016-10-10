@@ -94,7 +94,9 @@
         </main>
 
         <footer class="container">            
-            @include('front.footer', ['services' => $services])               
+            @include('front.footer', ['services' => $services, 'qtextContact' => $qtextContact
+            , 'qtextIntroduction' => $qtextIntroduction
+            , 'basicConfigs' => $basicConfigs])               
         </footer>
 
         {!! HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js') !!}

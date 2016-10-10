@@ -19,6 +19,16 @@ class QtextRepository extends BaseRepository
     
     public function getRecruit()
     {
-        return $this->model->where('title', 'Tuyển dụng')->get();
+        return $this->model->where('key', 'recruit')->firstOrFail();
+    }
+    
+    public function getFooterContact()
+    {
+        return $this->model->where('key', 'contact')->firstOrFail();
+    }
+    
+    public function getIntroduction()
+    {
+        return $this->model->where('key', 'introduction')->firstOrFail();
     }
 }

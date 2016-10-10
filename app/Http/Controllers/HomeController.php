@@ -12,6 +12,7 @@ use App\Repositories\ProjectRepository;
 use App\Repositories\NewsCategoryRepository;
 use App\Repositories\NewsRepository;
 use App\Repositories\QtextRepository;
+use App\Repositories\BasicConfigRepository;
 use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 
 class HomeController extends Controller
@@ -26,6 +27,7 @@ class HomeController extends Controller
     protected $newsCategoryRepository;
     protected $newsRepository;
     protected $qtextRepository;
+    protected $basicConfigRepository;
     
     public function __construct(MenuRepository $menuRepository
             ,CustomerRepository $customerRepository
@@ -36,7 +38,8 @@ class HomeController extends Controller
             , ProjectRepository $projectRepository
             , NewsCategoryRepository $newsCategoryRepository
             , NewsRepository $newsRepository
-            , QtextRepository $qtextRepository)
+            , QtextRepository $qtextRepository
+            , BasicConfigRepository $basicConfigRepository)
     {
         $this->menuRepository = $menuRepository;
         $this->customerRepository = $menuRepository;
@@ -48,6 +51,7 @@ class HomeController extends Controller
         $this->newsCategoryRepository = $newsCategoryRepository;
         $this->newsRepository = $newsRepository;
         $this->qtextRepository = $qtextRepository;
+        $this->basicConfigRepository = $basicConfigRepository;
     }
     
     /**
@@ -73,8 +77,16 @@ class HomeController extends Controller
         $faqs = $this->menuRepository->getActive(6);
         $recruits = $this->menuRepository->getActive(3);
         $qtextRecruit = $this->qtextRepository->getRecruit();
+        $qtextContact = $this->qtextRepository->getFooterContact();
+        $qtextIntroduction = $this->qtextRepository->getIntroduction();
+        $basicConfigs = $this->basicConfigRepository->getAll();
+        
 	
         return view('front.index', compact('menus', 'services'
-                , 'projectCategories','projects', 'newsCategories','news', 'customers', 'faqs', 'recruits','qtextRecruit'));
+                , 'projectCategories','projects', 'newsCategories','news', 'customers', 'faqs',
+                'recruits','qtextRecruit'
+                , 'qtextContact'
+                , 'qtextIntroduction'
+                , 'basicConfigs'));
     }
 }
