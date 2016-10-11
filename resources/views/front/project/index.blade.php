@@ -2,5 +2,5 @@
     ,'qtextContact' => $qtextContact, 'qtextIntroduction' => $qtextIntroduction
     , 'basicConfigs' => $basicConfigs])
 @section('main')
-    @include('front.partials.projects', ['projectCategories' => $projectCategories, 'projects'=> $projects])
+    @include('front.project.partials.projects', ['projectCategories' => $projectCategories, 'projects'=> $projects])
 @endsection
