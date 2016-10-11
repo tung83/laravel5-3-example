@@ -19,7 +19,7 @@
         {!! HTML::style('css/front_style.css') !!}
     </head>
   <body>
-    <div class="container">
+    <div class="project-page container">
         <header class="row">
              <div id="logo">
                 <a href="{{ route('home') }}"/>
@@ -51,8 +51,6 @@
                 </div>       
             </div>             
 
-            <div class="brand">{{ trans('front/site.title') }}</div>
-            <div class="address-bar">{{ trans('front/site.sub-title') }}</div>
             <div id="flags" class="text-center"></div>
             <div id="header-bottom">
                 <div id="header-right-bottom" class="pull-right">
@@ -93,74 +91,11 @@
             @yield('main')
         </main>
 
-        <footer>
-            @yield('footer')
-                <div class="row footer-details clearfix">
-                    <div id="footer-company-info" class="col-sm-3">                
-                        <div id="company-info">
-                            <img alt="" src="" style="height: 52px; width: 177px">                           
-                        </div>
-                    <hr>
-                        <div id="address-details" style="color: #bababa">
-                            <p class="location">Cao ốc Bùi Đình Tuý, Phường 24, Quận Bình Thạnh.</p>
-                            <p class="phone">Phone: <strong>3-512-8400</strong> ( 3 lines )</p>
-                            <p class="hotline">Hotline: 0123.456.7898</p>
-                            <p class="fax">Fax:&nbsp;<span style="line-height: 20.8px">3-512-8400</span></p>
-                            <p class="mst">MST: 123456789</p>
-                            <p class="email">Email: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>
-                            <p class="website">Website: <a href="mailto:info@emsvn.com">info@emsvn.com</a></p>
-                        </div>       
-                    </div>
-                    <div id="google-map" class="col-sm-3">      
-                        {!! Mapper::render() !!} 
-                     </div>                                 
-                    <div id="footer-introduction" class="col-sm-3 pull-right">
-                        <img alt="" src="" style="height: 52px; width: 177px">    
-                        <p class="readmore">gioi thieu</p>
-                    </div>                              
-                    <div id="footer-services" class="col-sm-3">
-                        <ul id="footer-social-items">
-                            <li>
-                                <a class="footer-facebook"></a>
-                            </li>
-                            <li>
-                                <a class="footer-tweeter"></a>
-                            </li>
-                            <li>
-                                <a class="footer-skype"></a>
-                            </li>
-                            <li>
-                                <a class="footer-goole-plus"></a>
-                            </li>
-                        </ul>
-                        <ul id="footer-services">
-                            <li class="clearfix">
-                                <a href="/trang-chu">Home</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/gioi-thieu">Giới Thiệu</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/tin-tuc">Tin Tức</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/dich-vu">Dịch Vụ</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/hoi-dap">Hỏi Đáp</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/download">Download</a>
-                            </li>
-                            <li class="clearfix">
-                                <a href="/lien-he">Liên Hệ</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="copyright text-center">
-                        Copyright © 2016 <a>PS Media</a>. All rights reserved
-                </div>
+    </div>
+        <footer class="container">            
+            @include('front.footer', ['services' => $services, 'qtextContact' => $qtextContact
+            , 'qtextIntroduction' => $qtextIntroduction
+            , 'basicConfigs' => $basicConfigs])               
         </footer>
 
         {!! HTML::script('https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js') !!}
@@ -184,14 +119,14 @@
                     autoplaySpeed: 2000,
                     infinite: true,
                     speed: 300,
-                    slidesToShow: 4,
+                    slidesToShow: 6,
                     slidesToScroll: 1,
                     responsive: [
                       {
                         breakpoint: 1024,
                         settings: {
                           slidesToShow: 3,
-                          slidesToScroll: 3,
+                          slidesToScroll: 1,
                           infinite: true,
                           dots: true
                         }
@@ -200,7 +135,7 @@
                         breakpoint: 600,
                         settings: {
                           slidesToShow: 2,
-                          slidesToScroll: 2
+                          slidesToScroll: 1
                         }
                       },
                       {
@@ -215,38 +150,111 @@
                       // instead of a settings object
                     ]
                   });
-                  
 
             });
-            $(function() {
-                    $(window).scroll(function(){
-                            var scrollTop = $(window).scrollTop();
-                            if(scrollTop != 0)
-                                    $('#header-bottom').stop().animate({'opacity':'0.2'},400);
-                            else	
-                                    $('#header-bottom').stop().animate({'opacity':'1'},400);
-                    });
-
-                    $('#header-bottom').hover(
-                            function (e) {
-                                    var scrollTop = $(window).scrollTop();
-                                    if(scrollTop != 0){
-                                            $('#header-bottom').stop().animate({'opacity':'1'},400);
-                                    }
-                            },
-                            function (e) {
-                                    var scrollTop = $(window).scrollTop();
-                                    if(scrollTop != 0){
-                                            $('#header-bottom').stop().animate({'opacity':'0.2'},400);
-                                    }
-                            }
-                    );
+        $(function() {
+            var divh=$('.service-sum').height();
+            $('.service-sum p').each( function( index, element ){
+                while ($(this).outerHeight()>divh) {
+                    $(this).text(function (index, text) {
+                    return text.replace(/\W*\s(\S)*$/, '...');
+                });
+            }
             });
+            $( ".slick-slide" ).hover(
+                function() {
+                  $( this ).find( "h5, p" ).css( "color", "#ffca9d" );
+                },function() {
+                  $( this ).find( "h5, p" ).css( "color", "" );
+                }
+              );
+        });
+        
+        /*==================== PAGINATION =========================*/
+        $(document).on('click','#project-rightside .pagination a', function(e){
+                e.preventDefault();               
+                var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
+                var values = valuesPart[0].split('?page=');
+                var id = values[0];
+                var page = values[1];
+                 getProjects(id, page);
+        });
+
+        function getProjects(id, page){
+                $.ajax({
+                    url: '{{ url('/ajax/project') }}' + '?pId=' + id + '&page=' + page,
+                    type: 'GET'
+                }).done(function(data){
+                        $('#project-rightside').html(data);
+                })
+                .fail(function() {                            
+                });
+        }
+        
+        $(document).on('click','#project-category .list-inline a', function(e){
+                e.preventDefault();                
+                $('#project-category .list-inline a').removeClass('active');
+                $(this).addClass('active');
+                var id = $(this).attr('href').match(/([0-9]+)$/g)[0];  
+                getProjectCategory(id);
+        });
+
+        function getProjectCategory(id){
+                $.ajax({
+                    url: '{{ url('/ajax/projectCategory') }}' + '?pId=' + id,
+                    type: 'GET'
+                }).done(function(data){
+                        $('#project-category-content').html(data);
+                })
+                .fail(function() {                            
+                });
+        }
+        
+        
+        /*==================== PAGINATION =========================*/
+        $(document).on('click','#news-rightside .pagination a', function(e){
+                e.preventDefault();        
+                var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
+                var values = valuesPart[0].split('?page=');
+                var id = values[0];
+                var page = values[1];
+                 getNews(id, page);
+        });
+
+        function getNews(id, page){
+                $.ajax({
+                    url: '{{ url('/ajax/news') }}' + '?pId=' + id + '&page=' + page,
+                    type: 'GET'
+                }).done(function(data){
+                        $('#news-rightside').html(data);
+                })
+                .fail(function() {                            
+                });
+        }
+        
+        $(document).on('click','#news-category .list-inline a', function(e){
+                e.preventDefault();                
+                $('#news-category .list-inline a').removeClass('active');
+                $(this).addClass('active'); 
+                var id = $(this).attr('href').match(/([0-9]+)$/g)[0]; 
+                getNewsCategory(id);
+        });
+
+        function getNewsCategory(id){
+                $.ajax({
+                    url: '{{ url('/ajax/newsCategory') }}' + '?pId=' + id,
+                    type: 'GET'
+                }).done(function(data){
+                        $('#news-category-content').html(data);
+                })
+                .fail(function() {                            
+                });
+        }
+                
+                
         </script>
 
         @yield('scripts')
-
-    <div class="container">
     <script type="text/javascript" src="{!! asset('js/scroll-nav-fixed.js') !!}"></script>
   </body>
 </html>

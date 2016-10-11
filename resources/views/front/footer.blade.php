@@ -19,20 +19,26 @@
                     </div>                              
      <?php  $facebookLink = $basicConfigs->first(function ($value, $key) {
             return $value['key'] == 'facebook';
+            });
+            $tweeterLink = $basicConfigs->first(function ($value, $key) {
+            return $value['key'] == 'tweeter';
+            });
+            $googleplusLink = $basicConfigs->first(function ($value, $key) {
+            return $value['key'] == 'googleplus';
             });?>
                     <div id="footer-services-links" class="col-sm-3">
                         <ul id="footer-social-items">
                             <li>
-                                <a class="footer-facebook" href="{{url($facebookLink->content)}}"></a>
+                                <a class="footer-facebook" href="{{url(languageTransform($facebookLink, 'content'))}} target="></a>
                             </li>
                             <li>
-                                <a class="footer-tweeter"></a>
+                                <a class="footer-tweeter" href="{{url(languageTransform($tweeterLink, 'content'))}}"></a>
                             </li>
                             <li>
                                 <a class="footer-skype"></a>
                             </li>
                             <li>
-                                <a class="footer-goole-plus"></a>
+                                <a class="footer-goole-plus" href="{{url(languageTransform($googleplusLink, 'content'))}}"></a>
                             </li>
                         </ul>
                         <div class="clear"></div>

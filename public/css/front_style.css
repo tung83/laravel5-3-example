@@ -504,9 +504,11 @@ footer ul#footer-services li:first-child{
         margin-top: 0;
     }
 }
+header {
+    background: #ca0000 url("../img/index_header_bg.jpg") no-repeat left top;
+}
 @media (min-width: 992px){    
     header {
-        background: #ca0000 url("../img/index_header_bg.jpg") no-repeat center center;
         height: 789px;
         position: relative;
     }
@@ -608,3 +610,21 @@ footer ul#footer-services li:first-child{
             top: 100%;
         }
     }
+   
+/*project page*/ 
+.project-page header {
+    background: #ca0000 url("../img/project-header-bg.png") no-repeat left top;
+}
+@media (min-width: 992px){
+    .project-page header {
+        height: 326px;
+        position: relative;
+    }
+    .project-page #header-bottom {
+    position: absolute;
+    width: 1260px;
+    bottom: 0;
+    padding-bottom: 9px;
+    background: transparent;
+}
+}

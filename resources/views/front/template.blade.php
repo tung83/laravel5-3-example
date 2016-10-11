@@ -51,8 +51,6 @@
                 </div>       
             </div>             
 
-            <div class="brand">{{ trans('front/site.title') }}</div>
-            <div class="address-bar">{{ trans('front/site.sub-title') }}</div>
             <div id="flags" class="text-center"></div>
             <div id="header-bottom">
                 <div id="header-right-bottom" class="pull-right">
@@ -93,6 +91,7 @@
             @yield('main')
         </main>
 
+    </div>
         <footer class="container">            
             @include('front.footer', ['services' => $services, 'qtextContact' => $qtextContact
             , 'qtextIntroduction' => $qtextIntroduction
@@ -173,9 +172,9 @@
         
         /*==================== PAGINATION =========================*/
         $(document).on('click','#project-rightside .pagination a', function(e){
-                e.preventDefault();
-                var valuesPart = $(this).attr('href').split('-p')[1];
-                var values = valuesPart.split('?page=');
+                e.preventDefault();               
+                var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
+                var values = valuesPart[0].split('?page=');
                 var id = values[0];
                 var page = values[1];
                  getProjects(id, page);
@@ -196,7 +195,7 @@
                 e.preventDefault();                
                 $('#project-category .list-inline a').removeClass('active');
                 $(this).addClass('active');
-                var id = $(this).attr('href').split('-p')[1];
+                var id = $(this).attr('href').match(/([0-9]+)$/g)[0];  
                 getProjectCategory(id);
         });
 
@@ -214,9 +213,11 @@
         
         /*==================== PAGINATION =========================*/
         $(document).on('click','#news-rightside .pagination a', function(e){
-                e.preventDefault();
-                var page = $(this).attr('href').split('page=')[1];
-                var id = $(this).attr('href').split('-p')[1];
+                e.preventDefault();        
+                var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
+                var values = valuesPart[0].split('?page=');
+                var id = values[0];
+                var page = values[1];
                  getNews(id, page);
         });
 
@@ -234,8 +235,8 @@
         $(document).on('click','#news-category .list-inline a', function(e){
                 e.preventDefault();                
                 $('#news-category .list-inline a').removeClass('active');
-                $(this).addClass('active');
-                var id = $(this).attr('href').split('-p')[1];
+                $(this).addClass('active'); 
+                var id = $(this).attr('href').match(/([0-9]+)$/g)[0]; 
                 getNewsCategory(id);
         });
 
@@ -254,8 +255,6 @@
         </script>
 
         @yield('scripts')
-
-    <div class="container">
     <script type="text/javascript" src="{!! asset('js/scroll-nav-fixed.js') !!}"></script>
   </body>
 </html>

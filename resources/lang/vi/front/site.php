@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Laravel 5',
+    'title' => '.:PS Media:.',
     'sub-title' => 'Un framework PHP novateur',
     'home' => 'Accueil',
     'contact' => 'Contact',
