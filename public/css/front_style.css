@@ -525,6 +525,7 @@ header {
         position: absolute;
         bottom: 0;
         right: 232px;
+        transition: 0.1s;
     }
     
     #logo a{
@@ -631,8 +632,28 @@ header {
     .project-page #header-bottom {
     position: absolute;
     width: 1260px;
-    bottom: 0;
+    bottom: 5px;
     padding-bottom: 9px;
-    background: transparent;
+    background: transparent;    
+    }
+    .project-page #logo {
+    bottom: -25px;
+    left: 5px;
+    transition: 0.1s;
+}
+.project-page .navbar {
+    padding-bottom: 10px;
+    padding-left: 146px;
+}
+.project-page  #header-right-bottom {
+    color: #eb2000;
+    margin-top: 36px;
+}
+.project-page #logo a {
+    display: block;
+    background-position: left bottom;
+    background-size: 149px 149px;
+    width: 170px;
+    height: 152px;
 }
 }

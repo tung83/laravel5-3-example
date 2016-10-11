@@ -10,9 +10,23 @@ $(document).ready(function(){
     {
         if ( $(window).scrollTop() > navHeight) {
                 $('#header-bottom').addClass('fixed');
+                $('#logo a').css({
+                    'background-size'  : '80px 80px'
+                });
+                $('#logo').css({
+                    'bottom'  : '-87px',                    
+                    'right'  : '163px'
+                });
         }
         else {
                 $('#header-bottom').removeClass('fixed');
+                $('#logo a').css({
+                    'background-size'  : '180px 180px'
+                });
+                $('#logo').css({
+                    'bottom'  : '0',                    
+                    'right'  : '232px'
+                });
         }
     }
     });

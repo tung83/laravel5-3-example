@@ -21,9 +21,7 @@
   <body>
     <div class="container">
         <header class="row">
-             <div id="logo">
-                <a href="{{ route('home') }}"/>
-            </div>    
+             
             <!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->
             
             <div id="header-top" class="row pull-right clearfix">                
@@ -53,6 +51,9 @@
 
             <div id="flags" class="text-center"></div>
             <div id="header-bottom">
+                 <div id="logo">
+                    <a href="{{ route('home') }}"/>
+                </div>   
                 <div id="header-right-bottom" class="pull-right">
                     <span><i class="fa fa-phone"></i> 0123.456.789</span>
                     <span><i class="fa fa-commenting-o"></i>&nbsp;CHAT ONLINE</span> 
