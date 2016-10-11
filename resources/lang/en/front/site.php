@@ -20,5 +20,7 @@ return [
     'projects' => 'PROJECTS',
     'project' => 'project',
     'news-title' => 'News',
-    'faq' => 'faq'
+    'faq' => 'faq',
+    'introduction' => 'introduction',    
+    'readmore' => 'read more...'
 ];

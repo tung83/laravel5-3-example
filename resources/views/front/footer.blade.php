@@ -8,13 +8,14 @@
                         </div>       
                     </div>
                     <div id="google-map" class="col-sm-3">      
-                        {!! Mapper::render() !!} 
-                     </div>                                 
+                        
+                     </div>     
+
                     <div id="footer-introduction" class="col-sm-3">
-                        <a href="{{ url(trans('front.site.introduction')) }}">
+                        <a href="{{ url(trans('front/site.introduction')) }}">
                             <img alt="introduction" src="{{asset('img/footer-introduction.png')}}">   
                             <p>{!! languageTransform($qtextIntroduction, 'content')!!}</p>
-                                
+                            <p class="readmore">{{ trans('front/site.readmore')}}</p>    
                         </a>
                     </div>                              
      <?php  $facebookLink = $basicConfigs->first(function ($value, $key) {
@@ -29,16 +30,16 @@
                     <div id="footer-services-links" class="col-sm-3">
                         <ul id="footer-social-items">
                             <li>
-                                <a class="footer-facebook" href="{{url(languageTransform($facebookLink, 'content'))}} target="></a>
+                                <a class="footer-facebook" href="{{url(languageTransform($facebookLink, 'content'))}}"  target="_blank"></a>
                             </li>
                             <li>
-                                <a class="footer-tweeter" href="{{url(languageTransform($tweeterLink, 'content'))}}"></a>
+                                <a class="footer-tweeter" href="{{url(languageTransform($tweeterLink, 'content'))}}" target="_blank"></a>
                             </li>
                             <li>
-                                <a class="footer-skype"></a>
+                                <a class="footer-skype" target="_blank"></a>
                             </li>
                             <li>
-                                <a class="footer-goole-plus" href="{{url(languageTransform($googleplusLink, 'content'))}}"></a>
+                                <a class="footer-goole-plus" href="{{url(languageTransform($googleplusLink, 'content'))}}" target="_blank"></a>
                             </li>
                         </ul>
                         <div class="clear"></div>
