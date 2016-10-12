@@ -19,7 +19,7 @@
         {!! HTML::style('css/front_style.css') !!}
     </head>
   <body>
-    <div class="container">
+    <div class="home-page container">
         <header class="row">
              
             <!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->

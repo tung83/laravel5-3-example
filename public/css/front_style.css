@@ -6,6 +6,9 @@
 	height: 58px; 
 	z-index: 99999;
 }
+.project-page .fixed{
+    height: 78px;
+}
 
 html, body {
   overflow-x:hidden 
@@ -70,7 +73,7 @@ body {
             transition: 0.2s ease-in;
         }
 
-        .nav > li:hover:before
+        .nav > li:hover:before,.nav > li.active:before
         {
             -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
@@ -622,7 +625,7 @@ header {
    
 /*project page*/ 
 .project-page header {
-    background: #ca0000 url("../img/project-header-bg.png") no-repeat left top;
+    background: #ca0000 url("../img/project-header-bg.png") no-repeat left bottom;
 }
 @media (min-width: 992px){
     .project-page header {
@@ -632,13 +635,14 @@ header {
     .project-page #header-bottom {
     position: absolute;
     width: 1260px;
-    bottom: 5px;
-    padding-bottom: 9px;
-    background: transparent;    
+    bottom: 0px;
+    padding-bottom: 14px;   
+    background: #ca0000 url("../img/project-header-bg.png") no-repeat left bottom;
     }
     .project-page #logo {
     bottom: -25px;
     left: 5px;
+    right:auto;
     transition: 0.1s;
 }
 .project-page .navbar {
@@ -655,5 +659,19 @@ header {
     background-size: 149px 149px;
     width: 170px;
     height: 152px;
+}
+.image-container img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.image-container {
+    position: relative;
+    height: 224px;
+}
+.md-5th{
+    width: 20%;
 }
 }
