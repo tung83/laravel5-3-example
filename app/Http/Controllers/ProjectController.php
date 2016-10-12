@@ -58,11 +58,13 @@ class ProjectController extends Controller
     }
     
     public function getItem(Request $request, $projectItem)
-    {
+    {        
+        preg_match('/(.*)-i(?P<digit>\d+)$/', $projectItem, $matches);
+        $itemId = $matches['digit'];
         $menus = $this->menuRepository->getActive();
         $services = $this->serviceCategoryRepository->getActive(10);        
         $projectCategories = $this->projectCategoryRepository->getActive(3);           
-        $project = $this->projectRepository->getById(4);
+        $project = $this->projectRepository->getById($itemId);
         $qtextRecruit = $this->qtextRepository->getRecruit();
         $qtextContact = $this->qtextRepository->getFooterContact();
         $qtextIntroduction = $this->qtextRepository->getIntroduction();

@@ -12,7 +12,7 @@ $(document).ready(function(){
     {
         if ( $(window).scrollTop() > navHeight) {
                 $('.home-page #header-bottom').addClass('fixed');
-                $('.home-page#logo a').css({
+                $('.home-page #logo a').css({
                     'background-size'  : '80px 80px'
                 });
                 $('.home-page #logo').css({
