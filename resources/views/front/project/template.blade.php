@@ -172,7 +172,7 @@
         });
         
         /*==================== PAGINATION =========================*/
-        $(document).on('click','#project-rightside .pagination a', function(e){
+        $(document).on('click','#project-category-content .pagination a', function(e){
                 e.preventDefault();               
                 var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
                 var values = valuesPart[0].split('?page=');
@@ -186,7 +186,7 @@
                     url: '{{ url('/ajax/project') }}' + '?pId=' + id + '&page=' + page,
                     type: 'GET'
                 }).done(function(data){
-                        $('#project-rightside').html(data);
+                        $('#project-category-content').html(data);
                 })
                 .fail(function() {                            
                 });
@@ -202,7 +202,7 @@
 
         function getProjectCategory(id){
                 $.ajax({
-                    url: '{{ url('/ajax/projectCategory') }}' + '?pId=' + id,
+                    url: '{{ url('/ajax/project') }}' + '?pId=' + id,
                     type: 'GET'
                 }).done(function(data){
                         $('#project-category-content').html(data);
@@ -221,36 +221,6 @@
                 var page = values[1];
                  getNews(id, page);
         });
-
-        function getNews(id, page){
-                $.ajax({
-                    url: '{{ url('/ajax/news') }}' + '?pId=' + id + '&page=' + page,
-                    type: 'GET'
-                }).done(function(data){
-                        $('#news-rightside').html(data);
-                })
-                .fail(function() {                            
-                });
-        }
-        
-        $(document).on('click','#news-category .list-inline a', function(e){
-                e.preventDefault();                
-                $('#news-category .list-inline a').removeClass('active');
-                $(this).addClass('active'); 
-                var id = $(this).attr('href').match(/([0-9]+)$/g)[0]; 
-                getNewsCategory(id);
-        });
-
-        function getNewsCategory(id){
-                $.ajax({
-                    url: '{{ url('/ajax/newsCategory') }}' + '?pId=' + id,
-                    type: 'GET'
-                }).done(function(data){
-                        $('#news-category-content').html(data);
-                })
-                .fail(function() {                            
-                });
-        }
         
         /*==================== google maps =========================*/
     function initMap() {

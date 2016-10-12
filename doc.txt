@@ -524,3 +524,62 @@ ALTER TABLE `recruit`
 --
 ALTER TABLE `recruit`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+
+DROP TABLE IF EXISTS `faq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `faq` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `meta_keyword` text NOT NULL,
+  `meta_description` text NOT NULL,
+  `view` varchar(200) NOT NULL,
+  `e_title` text NOT NULL,
+  `e_meta_keyword` text NOT NULL,
+  `e_meta_description` text NOT NULL,
+  `e_view` varchar(255) NOT NULL,
+  `ind` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `faq`
+--
+
+LOCK TABLES `faq` WRITE;
+/*!40000 ALTER TABLE `faq` DISABLE KEYS */;
+INSERT INTO `faq` (`id`, `title`, `meta_keyword`, `meta_description`, `view`, `e_title`, `e_meta_keyword`, `e_meta_description`, `e_view`, `ind`, `active`) VALUES (1,'Trang Chủ','thiet bi nha bep, thiết bị nhà bếp, mekong, mêkông, cong ty mekong, bep gas, bep ga, ','Nhập khẩu, sản xuất và phân phối các sản phẩm bếp &amp; thiết bị nhà bếp. Đ/c: 781/C9 Lê Hồng Phong (nd), Q.10, TPHCM\r\nTel: (84-8) 3862 0012 - 093 784 5566','trang-chu','Home','','','home',1,1),(2,'Giới Thiệu','','','gioi-thieu','Introduction','','','introduction',2,1),(3,'Sản Phẩm','','','san-pham','Product','','','product',3,1),(4,'Hệ Thống Phân Phối','','','he-thong-phan-phoi','Distribution Channel','','','distribution-channel',4,1),(5,'Bảo Hành','','','bao-hanh','Warranty','','','guarantee',5,1),(6,'Tin Tức','','','tin-tuc','News','','','news',6,1),(7,'Hỗ Trợ','','','ho-tro','Support','','','support',7,1),(8,'Video','','','video','Video','','','video',8,1),(9,'Sitemap','','','sitemap','Sitemap','','','sitemap',9,1),(10,'Liên Hệ','','','lien-he','Contact','','','contact',10,1);
+/*!40000 ALTER TABLE `faq` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `meta_keyword` text NOT NULL,
+  `meta_description` text NOT NULL,
+  `view` varchar(200) NOT NULL,
+  `e_title` text NOT NULL,
+  `e_meta_keyword` text NOT NULL,
+  `e_meta_description` text NOT NULL,
+  `e_view` varchar(255) NOT NULL,
+  `ind` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` (`id`, `title`, `meta_keyword`, `meta_description`, `view`, `e_title`, `e_meta_keyword`, `e_meta_description`, `e_view`, `ind`, `active`) VALUES (1,'Trang Chủ','thiet bi nha bep, thiết bị nhà bếp, mekong, mêkông, cong ty mekong, bep gas, bep ga, ','Nhập khẩu, sản xuất và phân phối các sản phẩm bếp &amp; thiết bị nhà bếp. Đ/c: 781/C9 Lê Hồng Phong (nd), Q.10, TPHCM\r\nTel: (84-8) 3862 0012 - 093 784 5566','trang-chu','Home','','','home',1,1),(2,'Giới Thiệu','','','gioi-thieu','Introduction','','','introduction',2,1),(3,'Sản Phẩm','','','san-pham','Product','','','product',3,1),(4,'Hệ Thống Phân Phối','','','he-thong-phan-phoi','Distribution Channel','','','distribution-channel',4,1),(5,'Bảo Hành','','','bao-hanh','Warranty','','','guarantee',5,1),(6,'Tin Tức','','','tin-tuc','News','','','news',6,1),(7,'Hỗ Trợ','','','ho-tro','Support','','','support',7,1),(8,'Video','','','video','Video','','','video',8,1),(9,'Sitemap','','','sitemap','Sitemap','','','sitemap',9,1),(10,'Liên Hệ','','','lien-he','Contact','','','contact',10,1);
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;

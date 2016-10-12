@@ -17,7 +17,7 @@
         </div>
         <div class="clear">
         </div>
-        <div id="project-category-content" class="container">
+        <div id="project-category-content">
             @include('front.project.partials.project-category',['projectCategory' => $projectCategories[0],'projects' => $projects])   
         </div>
     </div>

@@ -272,6 +272,7 @@ body {
     #project-items-rightside{
         display: inline-block;
         height: 568px;
+        width: 100%;
     }
 }
 

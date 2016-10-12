@@ -16,9 +16,11 @@ Route::get('dich-vu/{serviceCategory}', 'ServiceController');
 // Project
 Route::get('project', 'ProjectController@index');
 Route::get('du-an', 'ProjectController@index');
+Route::get('project/{projectItem}', 'ProjectController@getItem');
+Route::get('du-an/{projectItem}', 'ProjectController@getItem');
+Route::get('/ajax/project','ProjectAjaxController@partialProjectData');
 
-Route::get('/ajax/project','ProjectAjaxController@partialData');
-Route::get('/ajax/projectCategory','ProjectAjaxController@partialCategoryData');
+Route::get('/ajax/homeProject','ProjectAjaxController@partialHomeData');
 Route::get('/ajax/news','NewsAjaxController@partialData');
 Route::get('/ajax/newsCategory','NewsAjaxController@partialCategoryData');
 

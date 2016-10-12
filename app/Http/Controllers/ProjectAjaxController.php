@@ -29,18 +29,25 @@ class ProjectAjaxController extends Controller
         $this->middleware('ajax');
     }
     
-    public function partialCategoryData(Request $request)
+    public function partialHomeData(Request $request)
     {       
         $pid = $request->input('pId');
         $projectCategory = $this->projectCategoryRepository->getById($pid);
         $projects = getPaginateByPidData('project',$projectCategory, $this->projectRepository, 6);
-        return view('front.partials.project-category', ['projects' => $projects, 'projectCategory' => $projectCategory])->render();        
+        if(!$request->input('page'))
+        {
+            return view('front.partials.project-category', ['projects' => $projects, 'projectCategory' => $projectCategory])->render();        
+        }
+        else {     
+               return view('front.partials.project-items',['projects' => $projects])->render();
+        }
     }
-    public function partialData(Request $request)
+    
+    public function partialProjectData(Request $request)
     {       
         $pid = $request->input('pId');
         $projectCategory = $this->projectCategoryRepository->getById($pid);
         $projects = getPaginateByPidData('project',$projectCategory, $this->projectRepository, 6);
-	return view('front.partials.project-items',['projects' => $projects])->render();
-    }    
+        return view('front.project.partials.project-category', ['projects' => $projects])->render();  
+    }
 }

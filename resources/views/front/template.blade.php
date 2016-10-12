@@ -183,7 +183,7 @@
 
         function getProjects(id, page){
                 $.ajax({
-                    url: '{{ url('/ajax/project') }}' + '?pId=' + id + '&page=' + page,
+                    url: '{{ url('/ajax/homeProject') }}' + '?pId=' + id + '&page=' + page,
                     type: 'GET'
                 }).done(function(data){
                         $('#project-rightside').html(data);
@@ -202,7 +202,7 @@
 
         function getProjectCategory(id){
                 $.ajax({
-                    url: '{{ url('/ajax/projectCategory') }}' + '?pId=' + id,
+                    url: '{{ url('/ajax/homeProject') }}' + '?pId=' + id,
                     type: 'GET'
                 }).done(function(data){
                         $('#project-category-content').html(data);

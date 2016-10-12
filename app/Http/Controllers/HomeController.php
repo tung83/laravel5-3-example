@@ -42,7 +42,7 @@ class HomeController extends Controller
             , BasicConfigRepository $basicConfigRepository)
     {
         $this->menuRepository = $menuRepository;
-        $this->customerRepository = $menuRepository;
+        $this->customerRepository = $customerRepository;
         $this->faqRepository = $faqRepository;
         $this->recruitRepository = $recruitRepository;
         $this->serviceCategoryRepository = $serviceCategoryRepository;
@@ -73,9 +73,9 @@ class HomeController extends Controller
         
         $newsCategories = $this->newsCategoryRepository->getActive(3);           
         $news = getPaginateByPidData('news',$newsCategories[0], $this->newsRepository, 3);
-        $customers = $this->menuRepository->getActive(20);
-        $faqs = $this->menuRepository->getActive(6);
-        $recruits = $this->menuRepository->getActive(3);
+        $customers = $this->customerRepository->getActive(20);
+        $faqs = $this->faqRepository->getActive(6);
+        $recruits = $this->recruitRepository->getActive(3);
         $qtextRecruit = $this->qtextRepository->getRecruit();
         $qtextContact = $this->qtextRepository->getFooterContact();
         $qtextIntroduction = $this->qtextRepository->getIntroduction();
