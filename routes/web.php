@@ -20,9 +20,16 @@ Route::get('project/{projectItem}', 'ProjectController@getItem');
 Route::get('du-an/{projectItem}', 'ProjectController@getItem');
 Route::get('/ajax/project','ProjectAjaxController@partialProjectData');
 
+// News
+Route::get('news', 'NewsController@index');
+Route::get('tin-tuc', 'NewsController@index');
+Route::get('news/{projectItem}', 'NewsController@getItem');
+Route::get('tin-tuc/{projectItem}', 'NewsController@getItem');
+Route::get('/ajax/news','NewsAjaxController@partialNewsData');
+
+
 Route::get('/ajax/homeProject','ProjectAjaxController@partialHomeData');
-Route::get('/ajax/news','NewsAjaxController@partialData');
-Route::get('/ajax/newsCategory','NewsAjaxController@partialCategoryData');
+Route::get('/ajax/homeNews','NewsAjaxController@partialHomeData');
 
 
 

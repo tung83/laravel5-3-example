@@ -4,6 +4,7 @@ http://packalyst.com/packages/package/ignasbernotas/laravel-model-generator
 https://github.com/bradcornford/Googlmapper
 http://tutsme-webdesign.info/bootstrap-3-toggable-tabs-and-pills/
 http://sevenx.de/demo/bootstrap-carousel/index.html#.V-yHZyGLSUk
+http://baconforme.com/#demo1
 
 add virtual host;
 wamp D:\wamp64\bin\apache\apache2.4.18\conf\extra

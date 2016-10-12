@@ -19,9 +19,9 @@
         {!! HTML::style('css/front_style.css') !!}
     </head>
   <body>
-    <div class="home-page container">
+    <div class="news-page container">
         <header class="row">
-          
+              
             <!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->
             
             <div id="header-top" class="row pull-right clearfix">                
@@ -47,9 +47,12 @@
                         </div>
                     </form>
                 </div>       
-            </div>             
+            </div>  
+            <div class="clearfix"></div>
 
-            <div id="flags" class="text-center"></div>
+            <div id="news-list" class="text-center">        
+                <h1 class="title">{{trans('front/site.news-title')}}</h1>
+            </div>
             <div id="header-bottom">
                 <div id="logo">
                     <a href="{{ route('home') }}"/>
@@ -71,9 +74,9 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             @foreach( $menus as $menu )
-                            <li>                            
-                                {!! link_to(languageTransform($menu, 'view'), languageTransform($menu, 'title')) !!}                            
-                            </li>
+                                <li class="{{ $menu->e_view == 'news' ? 'active' : ''}}">                            
+                                    {!! link_to(languageTransform($menu, 'view'), languageTransform($menu, 'title')) !!}                            
+                                </li>
                             @endforeach                    
                         </ul>
                     </div>
@@ -172,7 +175,7 @@
         });
         
         /*==================== PAGINATION =========================*/
-        $(document).on('click','#project-rightside .pagination a', function(e){
+        $(document).on('click','#news-category-content .pagination a', function(e){
                 e.preventDefault();               
                 var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
                 var values = valuesPart[0].split('?page=');
@@ -183,51 +186,10 @@
 
         function getProjects(id, page){
                 $.ajax({
-                    url: '{{ url('/ajax/homeProject') }}' + '?pId=' + id + '&page=' + page,
+                    url: '{{ url('/ajax/news') }}' + '?pId=' + id + '&page=' + page,
                     type: 'GET'
                 }).done(function(data){
-                        $('#project-rightside').html(data);
-                })
-                .fail(function() {                            
-                });
-        }
-        
-        $(document).on('click','#project-category .list-inline a', function(e){
-                e.preventDefault();                
-                $('#project-category .list-inline a').removeClass('active');
-                $(this).addClass('active');
-                var id = $(this).attr('href').match(/([0-9]+)$/g)[0];  
-                getProjectCategory(id);
-        });
-
-        function getProjectCategory(id){
-                $.ajax({
-                    url: '{{ url('/ajax/homeProject') }}' + '?pId=' + id,
-                    type: 'GET'
-                }).done(function(data){
-                        $('#project-category-content').html(data);
-                })
-                .fail(function() {                            
-                });
-        }
-        
-        
-        /*==================== PAGINATION =========================*/
-        $(document).on('click','#news-category-content .pagination a', function(e){
-                e.preventDefault();        
-                var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
-                var values = valuesPart[0].split('?page=');
-                var id = values[0];
-                var page = values[1];
-                 getNews(id, page);
-        });
-
-        function getNews(id, page){
-                $.ajax({
-                    url: '{{ url('/ajax/homeNews') }}' + '?pId=' + id + '&page=' + page,
-                    type: 'GET'
-                }).done(function(data){
-                        $('#news-rightside').html(data);
+                        $('#news-category-content').html(data);
                 })
                 .fail(function() {                            
                 });
@@ -236,14 +198,14 @@
         $(document).on('click','#news-category .list-inline a', function(e){
                 e.preventDefault();                
                 $('#news-category .list-inline a').removeClass('active');
-                $(this).addClass('active'); 
-                var id = $(this).attr('href').match(/([0-9]+)$/g)[0]; 
-                getNewsCategory(id);
+                $(this).addClass('active');
+                var id = $(this).attr('href').match(/([0-9]+)$/g)[0];  
+                getProjectCategory(id);
         });
 
-        function getNewsCategory(id){
+        function getProjectCategory(id){
                 $.ajax({
-                    url: '{{ url('/ajax/homeNews') }}' + '?pId=' + id,
+                    url: '{{ url('/ajax/news') }}' + '?pId=' + id,
                     type: 'GET'
                 }).done(function(data){
                         $('#news-category-content').html(data);
@@ -282,7 +244,6 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVWAnZRS56JnP5Nr5otnuzg47TsmJoKBM&callback=initMap">
     </script>
-
         @yield('scripts')
     <script type="text/javascript" src="{!! asset('js/scroll-nav-fixed.js') !!}"></script>
   </body>

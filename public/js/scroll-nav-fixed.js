@@ -35,7 +35,7 @@ $(document).ready(function(){
     
     $(window).scroll(function(){
             var scrollTop = $(window).scrollTop();
-            if(scrollTop > 725)
+            if(scrollTop > 725 && !$('.news-page #header-bottom').is(":hover"))
                     $('.home-page #header-bottom').stop().animate({'opacity':'0.9'},725);
             else	
                     $('.home-page #header-bottom').stop().animate({'opacity':'1'},725);
@@ -44,9 +44,7 @@ $(document).ready(function(){
     $('.home-page #header-bottom').hover(
             function (e) {
                     var scrollTop = $(window).scrollTop();
-                    if(scrollTop > 725){
-                            $('.home-page #header-bottom').stop().animate({'opacity':'1'},725);
-                    }
+                    $('.home-page #header-bottom').stop().animate({'opacity':'1'},725);
             },
             function (e) {
                     var scrollTop = $(window).scrollTop();
@@ -88,7 +86,7 @@ $(document).ready(function(){
     
     $(window).scroll(function(){
             var scrollTop = $(window).scrollTop();
-            if(scrollTop > 248)
+            if(scrollTop > 248 && !$('.news-page #header-bottom').is(":hover"))
                     $('.project-page #header-bottom').stop().animate({'opacity':'0.9'},725);
             else	
                     $('.project-page #header-bottom').stop().animate({'opacity':'1'},725);
@@ -97,14 +95,61 @@ $(document).ready(function(){
     $('.project-page #header-bottom').hover(
             function (e) {
                     var scrollTop = $(window).scrollTop();
-                    if(scrollTop > 248){
-                            $('.project-page #header-bottom').stop().animate({'opacity':'1'},725);
-                    }
+                    $('.project-page #header-bottom').stop().animate({'opacity':'1'},725);
             },
             function (e) {
                     var scrollTop = $(window).scrollTop();
                     if(scrollTop > 248){
                             $('.project-page #header-bottom').stop().animate({'opacity':'0.9'},725);
+                    }
+            }
+    );
+       
+    
+    //News Page
+    $(window).bind('scroll', function() {
+    var navHeight = 244;
+    
+    if($(window).width() >= 992)
+    {
+        if ( $(window).scrollTop() > navHeight) {
+                $('.news-page #header-bottom').addClass('fixed');
+                $('.news-page #logo a').css({
+                    'background-size'  : '80px 80px'
+                });
+                $('.news-page #logo').css({
+                    'bottom'  : '-10px'                            
+                });
+        }
+        else {
+                $('.news-page #header-bottom').removeClass('fixed');
+                $('.news-page #logo a').css({
+                    'background-size'  : '149px 149px'
+                });
+                $('.news-page #logo').css({
+                    'bottom'  : '-25px'
+                });
+        }
+    }
+    });
+    
+    $(window).scroll(function(){
+            var scrollTop = $(window).scrollTop();
+            if(scrollTop > 244 && !$('.news-page #header-bottom').is(":hover"))
+                    $('.news-page #header-bottom').stop().animate({'opacity':'0.9'},725);
+            else	
+                    $('.news-page #header-bottom').stop().animate({'opacity':'1'},725);
+    });
+
+    $('.news-page #header-bottom').hover(
+            function (e) {
+                    var scrollTop = $(window).scrollTop();
+                    $('.news-page #header-bottom').stop().animate({'opacity':'1'},725);
+            },
+            function (e) {
+                    var scrollTop = $(window).scrollTop();
+                    if(scrollTop > 244){
+                            $('.news-page #header-bottom').stop().animate({'opacity':'0.9'},725);
                     }
             }
     );

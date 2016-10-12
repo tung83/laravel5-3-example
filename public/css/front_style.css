@@ -9,6 +9,9 @@
 .project-page .fixed{
     height: 78px;
 }
+.news-page .fixed{
+    height: 68px;
+}
 
 html, body {
   overflow-x:hidden 
@@ -281,12 +284,14 @@ body {
     padding-bottom: 70px;
 }
 #news-list {
-    background-image: url("../img/news-banner.png");
-    background-position: 50% 100%;
-    min-height: 158px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 900;
+}
+.home-page #news-list {
+    background-image: url("../img/news-banner.png");
+    background-position: 50% 100%;
+    min-height: 158px;
     font-size: 50px;
 }
 
@@ -675,4 +680,49 @@ header {
 .md-5th{
     width: 20%;
 }
+
+
+/*news page*/ 
+.news-page header {
+    background: #ca0000 url("../img/news-header-bg.png") no-repeat center bottom;
+}
+@media (min-width: 992px){
+    .news-page header {
+        height: 316px;
+        position: relative;
+    }
+    .news-page #header-bottom {
+    position: absolute;
+    width: 1260px;
+    bottom: 0px;
+    padding-bottom: 5px;   
+    background: #ca0000 url("../img/news-header-bg.png") no-repeat center bottom;
+    }
+    .news-page #logo {
+    bottom: -25px;
+    left: 5px;
+    right:auto;
+    transition: 0.1s;
+}
+.news-page .navbar {
+    padding-bottom: 10px;
+    padding-left: 146px;
+}
+.news-page  #header-right-bottom {
+    color: #eb2000;
+    margin-top: 36px;
+}
+.news-page #logo a {
+    display: block;
+    background-position: center bottom;
+    background-size: 149px 149px;
+    width: 150px;
+    height: 152px;
+}
+}
+.news #news-list > h2{
+    color: #000;
+}
+.news #news-items-most-saw{
+    background-color: #efefef;
 }

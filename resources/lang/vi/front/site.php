@@ -22,5 +22,6 @@ return [
     'news-title' => 'Tin tức',
     'faq' => 'hoi-dap',   
     'introduction' => 'gioi-thieu',     
-    'readmore' => 'xem thêm...'
+    'readmore' => 'xem thêm...',
+    'news-mostsaw' => 'Tin xem nhiều'
 ];

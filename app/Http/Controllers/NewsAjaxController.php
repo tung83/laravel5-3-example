@@ -27,19 +27,27 @@ class NewsAjaxController extends Controller
         $this->newsRepository = $newsRepository;
         $this->newsCategoryRepository = $newsCategoryRepository;
         $this->middleware('ajax');
-    }
+    } 
     
-    public function partialCategoryData(Request $request)
+    public function partialHomeData(Request $request)
     {       
         $pid = $request->input('pId');
         $newsCategory = $this->newsCategoryRepository->getById($pid);
-        $news = $this->newsRepository->paginateByPid($pid, 6);
-        return view('front.partials.news-category', ['news' => $news, 'newsCategory' => $newsCategory])->render();        
+        $newss = getPaginateByPidData('news',$newsCategory, $this->newsRepository, 6);
+        if(!$request->input('page'))
+        {
+            return view('front.partials.news-category', ['newss' => $newss, 'newsCategory' => $newsCategory])->render();        
+        }
+        else {     
+               return view('front.partials.news-items',['newss' => $newss])->render();
+        }
     }
-    public function partialData(Request $request)
+    
+    public function partialProjectData(Request $request)
     {       
         $pid = $request->input('pId');
-        $news = $this->newsRepository->paginateByPid($pid, 6);
-	return view('front.partials.news-items',['news' => $news])->render();
-    }    
+        $newsCategory = $this->newsCategoryRepository->getById($pid);
+        $newsList = getPaginateByPidData('news',$newsCategory, $this->newsRepository, 6);
+        return view('front.news.partials.news-category', ['newsList' => $newsList])->render();  
+    }
 }

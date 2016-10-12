@@ -211,17 +211,6 @@
                 });
         }
         
-        
-        /*==================== PAGINATION =========================*/
-        $(document).on('click','#news-rightside .pagination a', function(e){
-                e.preventDefault();        
-                var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
-                var values = valuesPart[0].split('?page=');
-                var id = values[0];
-                var page = values[1];
-                 getNews(id, page);
-        });
-        
         /*==================== google maps =========================*/
     function initMap() {
       var lequangdinh = {lat: 10.818794, lng: 106.689732};
