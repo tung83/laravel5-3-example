@@ -13,7 +13,6 @@ use App\Repositories\NewsCategoryRepository;
 use App\Repositories\NewsRepository;
 use App\Repositories\QtextRepository;
 use App\Repositories\BasicConfigRepository;
-use Cornford\Googlmapper\Facades\MapperFacade as Mapper;
 
 class HomeController extends Controller
 { 
@@ -61,11 +60,6 @@ class HomeController extends Controller
      */
     public function __invoke()
     {
-        //$this->menuRepository = new MenuRepository(new Menu());
-
-        Mapper::map(53.381128999999990000, -1.470085000000040000)->informationWindow(10.8188524, 106.6875215, '<h5>Tung test</h5> <a href="tung.vn.com">Website</a>', ['open' => true, 'zoom' => 30, 'animation' => 'DROP','title' => 'Địa chỉ']);
-        //Mapper::map(52.381128999999990000, 0.470085000000040000)->informationWindow(10.8188524, 106.6875215, 'Content', ['markers' => ['animation' => 'DROP', 'scale' => 1000]]);
-        //Mapper::map(52.381128999999990000, 0.470085000000040000)->marker(53.381128999999990000, -1.470085000000040000, ['markers' => ['symbol' => 'circle', 'scale' => 1000, 'animation' => 'DROP']]);
         $menus = $this->menuRepository->getActive();
         $services = $this->serviceCategoryRepository->getActive(10);
         $projectCategories = $this->projectCategoryRepository->getActive(3);           

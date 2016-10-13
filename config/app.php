@@ -209,8 +209,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Magyarjeti\LaravelLipsum\LipsumServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
-        App\Providers\ElfinderServiceProvider::class,
-        Cornford\Googlmapper\MapperServiceProvider::class,
+        App\Providers\ElfinderServiceProvider::class
 
     ],
 
@@ -260,8 +259,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
-        'Lipsum' => Magyarjeti\LaravelLipsum\LipsumFacade::class,
-        'Mapper'    => Cornford\Googlmapper\Facades\MapperFacade::class
+        'Lipsum' => Magyarjeti\LaravelLipsum\LipsumFacade::class
     ],
 
 ];
