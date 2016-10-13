@@ -720,7 +720,7 @@ header {
     height: 152px;
 }
 }
-.news #news-list > h2{
+.news-page .news #news-list > h2{
     color: #000;
 }
 .news #news-items-most-saw{

@@ -23,5 +23,5 @@ return [
     'faq' => 'hoi-dap',   
     'introduction' => 'gioi-thieu',     
     'readmore' => 'xem thêm...',
-    'news-mostsaw' => 'Tin xem nhiều'
+    'news-mostsaw' => 'Tin xem nhiều',
 ];

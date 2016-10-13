@@ -23,5 +23,5 @@ return [
     'faq' => 'faq',
     'introduction' => 'introduction',    
     'readmore' => 'read more...',
-    'news-mostsaw' => 'Most Read'
+    'news-mostsaw' => 'Most Read',
 ];

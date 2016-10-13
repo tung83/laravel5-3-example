@@ -27,6 +27,10 @@ Route::get('news/{projectItem}', 'NewsController@getItem');
 Route::get('tin-tuc/{projectItem}', 'NewsController@getItem');
 Route::get('/ajax/news','NewsAjaxController@partialNewsData');
 
+//Contact
+Route::get('contact', 'ContactFormController@index');
+Route::get('lien-he', 'ContactFormController@index');
+
 
 Route::get('/ajax/homeProject','ProjectAjaxController@partialHomeData');
 Route::get('/ajax/homeNews','NewsAjaxController@partialHomeData');

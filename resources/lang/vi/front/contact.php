@@ -1,10 +1,11 @@
 <?php
 
 return [
-    'title' => 'Formulaire de contact',
-    'text' => 'Si vous désirez nous laisser un message veuillez remplir le formulaire suivant :',
+    'title' => 'Liên hệ',
+    'text' => 'Cảm ơn Quý khách đã truy cập vào website. Mọi thông tin chi tiết',
     'name' => 'Votre nom',
     'email' => 'Votre Email',
     'message' => 'Votre message',
-    'ok' => 'Votre message a bien été enregistré, nous vous répondrons dès que possible.'
+    'ok' => 'Votre message a bien été enregistré, nous vous répondrons dès que possible.',
+    'send' => 'Gửi'
 ];
