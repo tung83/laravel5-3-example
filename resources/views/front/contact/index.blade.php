@@ -1,4 +1,4 @@
-@extends('front.project.template', ['menus' => $menus, 'services' => $services
+@extends('front.contact.template', ['menus' => $menus, 'services' => $services
     ,'qtextContact' => $qtextContact, 'qtextIntroduction' => $qtextIntroduction
     , 'basicConfigs' => $basicConfigs])
 @section('main')
@@ -14,6 +14,9 @@
         @include('front.contact.partials.form')
     </div>    
 </div>
-
+<div class="clearfix"></div>
+<div id="contact-google-map" class="row"> 
+    
+</div>
     
 @endsection

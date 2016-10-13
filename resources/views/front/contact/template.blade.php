@@ -212,10 +212,15 @@
         }
         
         /*==================== google maps =========================*/
-    function initMap() {
-      var lequangdinh = {lat: 10.818794, lng: 106.689732};
-      var lequangdinhCenter = {lat: 10.8195, lng:  106.689732};
-      var map = new google.maps.Map(document.getElementById('google-map'), {
+        function initMap() {
+          createGoogleMap('contact-google-map');
+          createGoogleMap('google-map');
+        }         
+
+        function createGoogleMap(id){
+          var lequangdinh = {lat: 10.818794, lng: 106.689732};
+          var lequangdinhCenter = {lat: 10.8195, lng:  106.689732};
+        var map = new google.maps.Map(document.getElementById(id), {
         zoom: 17,
         mapTypeControl: false,
         fullscreenControl: true,
@@ -228,14 +233,14 @@
         title: '624 Lê Quang Định'
       });
       var lequangdinhContentString = 
-            '<p style="color: #ed1c24">PS MEDIA CO., LTD</p>' +
+            '<p style="color: #ed1c24">PS MEDIA CO. LTD</p>' +
             '<a  target="_blank" href="https://www.google.com/maps/dir//624+L%C3%AA+Quang+%C4%90%E1%BB%8Bnh,+ph%C6%B0%E1%BB%9Dng+1,+G%C3%B2+V%E1%BA%A5p,+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.8189622,106.6887449,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x317528ef6ad85a59:0x42754d325a8b55a6!2m2!1d106.6897102!2d10.8188471!3e0">Get direction</a>';
 
         var infowindow = new google.maps.InfoWindow({
           content: lequangdinhContentString
         });
         infowindow.open(map, marker);
-    }              
+        }
                 
         </script>
     <script async defer

@@ -726,3 +726,7 @@ header {
 .news #news-items-most-saw{
     background-color: #efefef;
 }
+
+#contact-google-map{
+    height: 572px;
+}
