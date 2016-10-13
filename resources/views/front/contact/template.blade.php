@@ -19,7 +19,7 @@
         {!! HTML::style('css/front_style.css') !!}
     </head>
   <body>
-    <div class="project-page container">
+    <div class="contact-page container">
         <header class="row">
               
             <!--http://bootsnipp.com/snippets/featured/expanding-search-button-in-css-->
@@ -71,7 +71,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             @foreach( $menus as $menu )
-                                <li class="{{ $menu->e_view == 'project' ? 'active' : ''}}">                            
+                                <li class="{{ $menu->e_view == 'contact' ? 'active' : ''}}">                            
                                     {!! link_to(languageTransform($menu, 'view'), languageTransform($menu, 'title')) !!}                            
                                 </li>
                             @endforeach                    
@@ -172,7 +172,7 @@
         });
         
         /*==================== PAGINATION =========================*/
-        $(document).on('click','#project-category-content .pagination a', function(e){
+        $(document).on('click','#contact-category-content .pagination a', function(e){
                 e.preventDefault();               
                 var valuesPart = $(this).attr('href').match(/([0-9]+)\?page=([0-9]+)$/g);  
                 var values = valuesPart[0].split('?page=');
@@ -183,18 +183,18 @@
 
         function getProjects(id, page){
                 $.ajax({
-                    url: '{{ url('/ajax/project') }}' + '?pId=' + id + '&page=' + page,
+                    url: '{{ url('/ajax/contact') }}' + '?pId=' + id + '&page=' + page,
                     type: 'GET'
                 }).done(function(data){
-                        $('#project-category-content').html(data);
+                        $('#contact-category-content').html(data);
                 })
                 .fail(function() {                            
                 });
         }
         
-        $(document).on('click','#project-category .list-inline a', function(e){
+        $(document).on('click','#contact-category .list-inline a', function(e){
                 e.preventDefault();                
-                $('#project-category .list-inline a').removeClass('active');
+                $('#contact-category .list-inline a').removeClass('active');
                 $(this).addClass('active');
                 var id = $(this).attr('href').match(/([0-9]+)$/g)[0];  
                 getProjectCategory(id);
@@ -202,10 +202,10 @@
 
         function getProjectCategory(id){
                 $.ajax({
-                    url: '{{ url('/ajax/project') }}' + '?pId=' + id,
+                    url: '{{ url('/ajax/contact') }}' + '?pId=' + id,
                     type: 'GET'
                 }).done(function(data){
-                        $('#project-category-content').html(data);
+                        $('#contact-category-content').html(data);
                 })
                 .fail(function() {                            
                 });

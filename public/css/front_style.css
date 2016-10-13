@@ -686,7 +686,6 @@ header {
 .news-page header {
     background: #ca0000 url("../img/news-header-bg.png") no-repeat center bottom;
 }
-@media (min-width: 992px){
     .news-page header {
         height: 316px;
         position: relative;
