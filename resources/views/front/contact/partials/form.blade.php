@@ -2,6 +2,7 @@
   <form id="contact" action="" method="post">
     <h3>Colorlib Contact Form</h3>
     <h4>Contact us for custom quote</h4>
+    {!! Recaptcha::render() !!}
     <fieldset>
       <input placeholder="Your name" type="text" tabindex="1" required autofocus>
     </fieldset>

@@ -12,7 +12,7 @@ return [
     | such as the size rules. Feel free to tweak each of these messages.
     |
     */
-
+    "recaptcha" => 'The :attribute field không đúng.',
     'accepted'             => 'Le champ :attribute doit être accepté.',
     'active_url'           => "Le champ :attribute n'est pas une URL valide.",
     'after'                => 'Le champ :attribute doit être une date postérieure au :date.',

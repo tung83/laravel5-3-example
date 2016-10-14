@@ -209,7 +209,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Magyarjeti\LaravelLipsum\LipsumServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
-        App\Providers\ElfinderServiceProvider::class
+        App\Providers\ElfinderServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
     ],
 
@@ -259,7 +260,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
-        'Lipsum' => Magyarjeti\LaravelLipsum\LipsumFacade::class
+        'Lipsum' => Magyarjeti\LaravelLipsum\LipsumFacade::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];
